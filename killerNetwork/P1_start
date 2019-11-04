@@ -9,7 +9,7 @@ ip link set dev as64512 up
 
 ip -6 addr add fde4:3:12::1/64 dev P1-eth0 
 ip -6 addr add fde4:3:a1::1/64 dev P1-eth1
-ip -6 addr add fde4::3:cafe dev as64512
+ip -6 addr add fde4::3:cafe/64 dev as64512
 
 # zebra is required to make the link between all FRRouting daemons
 # and the linux kernel routing table
