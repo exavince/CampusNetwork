@@ -24,7 +24,7 @@ CONFIGDIR=Test_Flo
 BOOT="boot"
 # startup script name
 STARTUP="start"
-PREFIXBASE="fd00:${GROUPNUMBER}"
+PREFIXBASE="fde4:${GROUPNUMBER}"
 PREFIXLEN=32
 # You can reuse the above two to generate ip addresses/routes, ...
 # e.g. "${PREFIXBASE}:1234::/$((PREFIXLEN+16))"
@@ -39,7 +39,7 @@ function mk_topo {
     # e.g. BXL-eth0 links to LLN-eth0
     add_link F1 F2
     # BXL-eth1 links to BELNET-eth0
-    add_link F1 F3
+    # add_link F1 F3
 
     echo "@@ Adding LANs"
     # Create a new LAN (subnet), attached to BELNET, with 2 hosts: B1 and B2
@@ -49,6 +49,9 @@ function mk_topo {
 
     echo "@@ Briding the network"
     # Connect BELNET to its two connectivity providers
-    bridge_node F1 eth1 as200
-    bridge_node F1 eth2 as300
+    bridge_node F1 eth1 grp1
+    bridge_node F1 eth2 grp2
+    bridge_node F2 eth1 grp1
+    bridge_node F2 eth2 grp2
+
 }

@@ -53,5 +53,8 @@ function mk_topo {
     add_link P8 P9
     add_link P9 P10
     add_link P10 P1
+
+    echo "@@ Bridging nodes"
+    bridge_node P1 eth2 as64512
 }
 

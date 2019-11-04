@@ -4,3 +4,15 @@
 /home/vagrant/Group_folder/CampusNetwork/example_cfg/templates /templates none rw,bind 0 0
 /home/vagrant/Group_folder/CampusNetwork/example_cfg/puppetmodules /puppetmodules none rw,bind 0 0
 /run/BELNET /run none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/Test_Flo/templates /templates none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/Test_Flo/puppetmodules /puppetmodules none rw,bind 0 0
+/run/F3 /run none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/Test_Flo/templates /templates none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/Test_Flo/puppetmodules /puppetmodules none rw,bind 0 0
+/run/F3 /run none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/Test_Flo/templates /templates none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/Test_Flo/puppetmodules /puppetmodules none rw,bind 0 0
+/run/F3 /run none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/Test_Flo/templates /templates none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/Test_Flo/puppetmodules /puppetmodules none rw,bind 0 0
+/run/F3 /run none rw,bind 0 0

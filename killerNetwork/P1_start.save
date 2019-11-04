@@ -5,11 +5,11 @@ ldconfig
 # Assigning IP addr for P1-eth
 ip link set dev P1-eth0 up
 ip link set dev P1-eth1 up
-ip link set dev as64512 up
+ip link set dev P1-eth2 up  #BGP interface
 
 ip -6 addr add fde4:3:12::1/64 dev P1-eth0 
 ip -6 addr add fde4:3:a1::1/64 dev P1-eth1
-ip -6 addr add fde4::3:cafe dev as64512
+ip -6 addr add fde4::2:cafe dev P1-eth2
 
 # zebra is required to make the link between all FRRouting daemons
 # and the linux kernel routing table

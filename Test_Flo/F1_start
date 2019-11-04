@@ -18,8 +18,27 @@ ip address add dev F1-eth0 "${PREFIXBASE}:beb1::be/64"
 # to the fist subnet connected to this router (defaults to fd00:255:be::/48)
 ip address add dev F1-lan0 "${PREFIXBASE}:be::/$((PREFIXLEN+16))"
 
-# Crude way to adapt the router configuration to the current group number
-sed "s/##ASN##/${GROUPNUMBER}/" /etc/bird/bird6.conf.templ > /etc/bird/bird6.conf
+chown -R quagga /etc/quagga
+chgrp -R quagga /etc/quagga
 
-# Start BIRD
-bird6 -s /tmp/F1.ctl
+API=/tmp/F1.api
+
+zebra -d -k -u quagga -g quagga\
+    -f /etc/quagga/zebra.conf\
+    -i /tmp/F1_zebra.pid\
+    -z "$API"
+
+retries=0
+while [ ! -e "$API" ]; do
+    inotifywait -qqt2 -e create "$(dirname $API)"
+    ((++retries))
+    if ((retries > 4)); then
+        echo "Zebra did not create its API socket, giving up"
+        exit 1
+    fi
+done
+
+ospf6d -d -u quagga -g quagga\
+    -f /etc/quagga/ospf6d.conf\
+    -i /tmp/F1_ospf6.pid\
+    -z "$API"
