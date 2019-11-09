@@ -23,11 +23,10 @@ if __name__ == '__main__':
     parser = ArgumentParser(description="Simple script that will generate a configuration file "
                                         "according to the template and the JSON file given at arguments")
     parser.add_argument('-i', '--input', type=FileType('r'), default=sys.stdin,
-                        help='JSON formatted file path containing data for the template')
-    parser.add_argument('-t', '--template', type=str, required=True, help='Path to the Mako based template')
+                        help='./ospf6d.json')
+    parser.add_argument('-t', '--template', type=str, required=True, help='ospf6d.mako')
     parser.add_argument('-o', '--output', type=FileType('w'), default=sys.stdout,
-                        help='File path where to write the final file. Variables of the JSON file will be applied to '
-                             'the template given with the "-t" argument')
+                        help='./')
     parser.add_argument('-m', '--multiple', action='store_true', required=False,
                         help="If set, the JSON is a list of file to generate. "
                              "If not set, it is a configuration for a single file.")

@@ -1,0 +1,421 @@
+[
+  {
+    "name": "P0",
+    "hostname": "P0",
+    "passwd": "zebra",
+    "router_id": "255.251.23.5",
+    "interfaces": [
+      {
+        "name": "P0-eth0",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      },
+      {
+        "name": "P0-eth1",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+       }
+    ]
+  },
+  {
+    "name": "P1",
+    "hostname": "P1",
+    "passwd": "zebra",
+    "router_id": "255.251.23.6",
+    "interfaces": [
+      {
+        "name": "P1-eth0",
+        "cost": 4,
+        "hello_time": 20,
+        "dead_time": 35,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      },
+      {
+        "name": "P1-eth1",
+        "cost": 1,
+        "hello_time": 60,
+        "dead_time": 50,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "P2",
+    "hostname": "P2",
+    "passwd": "zebra",
+    "router_id": "255.251.23.7",
+    "interfaces": [
+      {
+        "name": "P2-eth0",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      },
+      {
+        "name": "P2-eth1",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+       },
+       {
+        "name": "P2-eth2",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "P3",
+    "hostname": "P3",
+    "passwd": "zebra",
+    "router_id": "255.251.23.8",
+    "interfaces": [
+      {
+        "name": "P3-eth0",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      },
+      {
+        "name": "P3-eth1",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+       },
+       {
+        "name": "P3-eth2",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      },
+      {
+        "name": "P3-eth3",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "P4",
+    "hostname": "P4",
+    "passwd": "zebra",
+    "router_id": "255.251.23.10",
+    "interfaces": [
+      {
+        "name": "P4-eth0",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      },
+      {
+        "name": "P4-eth1",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+       },
+       {
+        "name": "P4-eth2",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "P5",
+    "hostname": "P5",
+    "passwd": "zebra",
+    "router_id": "255.251.23.11",
+    "interfaces": [
+      {
+        "name": "P5-eth0",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      },
+      {
+        "name": "P5-eth1",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+       }
+    ]
+  },
+  {
+    "name": "P6",
+    "hostname": "P6",
+    "passwd": "zebra",
+    "router_id": "255.251.23.12",
+    "interfaces": [
+      {
+        "name": "P6-eth0",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      },
+      {
+        "name": "P6-eth1",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+       },
+       {
+        "name": "P6-eth2",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+       },
+       {
+        "name": "P6-eth3",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "P7",
+    "hostname": "P7",
+    "passwd": "zebra",
+    "router_id": "255.251.23.13",
+    "interfaces": [
+      {
+        "name": "P7-eth0",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      },
+      {
+        "name": "P7-eth1",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "P8",
+    "hostname": "P8",
+    "passwd": "zebra",
+    "router_id": "255.251.23.14",
+    "interfaces": [
+      {
+        "name": "P8-eth0",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      },
+      {
+        "name": "P8-eth1",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+       }
+    ]
+  },
+  {
+    "name": "P9",
+    "hostname": "P9",
+    "passwd": "zebra",
+    "router_id": "255.251.23.15",
+    "interfaces": [
+      {
+        "name": "P9-eth0",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      },
+      {
+        "name": "P9-eth1",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+       },
+       {
+        "name": "P9-eth2",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "P10",
+    "hostname": "P10",
+    "passwd": "zebra",
+    "router_id": "255.251.23.16",
+    "interfaces": [
+      {
+        "name": "P10-eth0",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      },
+      {
+        "name": "P10-eth1",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+       },
+       {
+        "name": "P10-eth2",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "P11",
+    "hostname": "P11",
+    "passwd": "zebra",
+    "router_id": "255.251.23.17",
+    "interfaces": [
+      {
+        "name": "P11-eth0",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      },
+      {
+        "name": "P11-eth1",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+       },
+       {
+        "name": "P11-eth2",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "P12",
+    "hostname": "P12",
+    "passwd": "zebra",
+    "router_id": "255.251.23.18",
+    "interfaces": [
+      {
+        "name": "P12-eth0",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+      },
+      {
+        "name": "P12-eth1",
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
+        "instance_id": 0,
+        "area": "0.0.0.0",
+        "active": true
+       }
+    ]
+  }
+]

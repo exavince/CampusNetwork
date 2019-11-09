@@ -3,7 +3,7 @@
 import pexpect
 import json
 
-__PASSWD = 'password'
+__PASSWD = 'put your password here'
 # or use your private key
 
 
@@ -27,7 +27,7 @@ def trim_from_end(text, char):
 
 if __name__ == '__main__':
     # open a new remote connection via ssh
-    child = pexpect.spawn('ssh lingi2142vm', timeout=120)
+    child = pexpect.spawn('ssh thomas@localhost', timeout=120)
     idx = child.expect('password:', r"The authenticity of host .+ can't be established")
 
     if idx == 1:
