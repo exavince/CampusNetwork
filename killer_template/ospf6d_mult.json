@@ -1,6 +1,6 @@
 [
   {
-    "name": "P0",
+    "name": "p0_ospf",
     "hostname": "P0",
     "passwd": "zebra",
     "router_id": "255.251.23.5",
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "name": "P1",
+    "name": "p1_ospf",
     "hostname": "P1",
     "passwd": "zebra",
     "router_id": "255.251.23.6",
@@ -52,7 +52,7 @@
     ]
   },
   {
-    "name": "P2",
+    "name": "p1_ospf",
     "hostname": "P2",
     "passwd": "zebra",
     "router_id": "255.251.23.7",
@@ -87,7 +87,7 @@
     ]
   },
   {
-    "name": "P3",
+    "name": "p3_ospf",
     "hostname": "P3",
     "passwd": "zebra",
     "router_id": "255.251.23.8",
@@ -131,7 +131,7 @@
     ]
   },
   {
-    "name": "P4",
+    "name": "p4_ospf",
     "hostname": "P4",
     "passwd": "zebra",
     "router_id": "255.251.23.10",
@@ -166,7 +166,7 @@
     ]
   },
   {
-    "name": "P5",
+    "name": "p5_ospf",
     "hostname": "P5",
     "passwd": "zebra",
     "router_id": "255.251.23.11",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "name": "P6",
+    "name": "p6_ospf",
     "hostname": "P6",
     "passwd": "zebra",
     "router_id": "255.251.23.12",
@@ -236,7 +236,7 @@
     ]
   },
   {
-    "name": "P7",
+    "name": "p7_ospf",
     "hostname": "P7",
     "passwd": "zebra",
     "router_id": "255.251.23.13",
@@ -262,7 +262,7 @@
     ]
   },
   {
-    "name": "P8",
+    "name": "p8_ospf",
     "hostname": "P8",
     "passwd": "zebra",
     "router_id": "255.251.23.14",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "name": "P9",
+    "name": "p9_ospf",
     "hostname": "P9",
     "passwd": "zebra",
     "router_id": "255.251.23.15",
@@ -323,7 +323,7 @@
     ]
   },
   {
-    "name": "P10",
+    "name": "p10_ospf",
     "hostname": "P10",
     "passwd": "zebra",
     "router_id": "255.251.23.16",
@@ -358,7 +358,7 @@
     ]
   },
   {
-    "name": "P11",
+    "name": "p11_ospf",
     "hostname": "P11",
     "passwd": "zebra",
     "router_id": "255.251.23.17",
@@ -393,7 +393,7 @@
     ]
   },
   {
-    "name": "P12",
+    "name": "p12_ospf",
     "hostname": "P12",
     "passwd": "zebra",
     "router_id": "255.251.23.18",

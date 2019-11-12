@@ -1,0 +1,18 @@
+{
+  "hostname": "P1",
+    "interfaces": [
+    {
+      "name": "eth0",
+      "link_to": true
+    },
+    {
+      "name": "eth5",
+      "cost": 5,
+      "instance_id": 0,
+      "area": "0.0.0.0",
+      "active": false
+    }
+  ]
+}
+
+
