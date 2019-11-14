@@ -1,20 +1,208 @@
-
-! -*- zebra -*-
-!
-! zebra sample configuration file
-!
-hostname ${data['hostname']}
-password zebra
-enable password zebra
-!
-! Interface's description.
-!
-interface lo
- description loopback.
-%for interface in data['interfaces']:
-!
-interface ${interface['name']} 
- description Link to ${interface['link_to']}
-!
-%endfor
-!
+[
+  {
+    "name" : "p0_zebra",
+    "hostname": "P0",
+    "interfaces": [
+      {
+        "name": "P0-eth0",
+        "link_to": "P1"
+      },
+      {
+        "name": "P0-eth1",
+        "link_to": "P8"
+      }
+    ]
+  }, 
+  {
+    "name" : "p1_zebra",
+    "hostname": "P1",
+    "interfaces": [
+      {
+        "name": "P1-eth0",
+        "link_to": "P0"
+      },
+      {
+        "name": "P1-eth1",
+        "link_to": "P2"
+      }
+    ]
+  }, 
+  {
+    "name" : "p2_zebra",
+    "hostname": "P2",
+    "interfaces": [
+      {
+        "name": "P2-eth0",
+        "link_to": "P1"
+      },
+      {
+        "name": "P2-eth1",
+        "link_to": "P2"
+      },
+      {
+        "name": "P2-eth2",
+        "link_to": "P6"
+      }
+    ]
+  },
+  {
+    "name" : "p3_zebra",
+    "hostname": "P3",
+    "interfaces": [
+      {
+        "name": "P3-eth0",
+        "link_to": "P2"
+      },
+      {
+        "name": "P3-eth1",
+        "link_to": "P4"
+      }
+    ]
+  },
+  {
+    "name" : "p4_zebra",
+    "hostname": "P4",
+    "interfaces": [
+      {
+        "name": "P4-eth0",
+        "link_to": "P3"
+      },
+      {
+        "name": "P4-eth1",
+        "link_to": "P5"
+      },
+      {
+        "name": "P4-eth2",
+        "link_to": "P6"
+      }
+    ]
+  },
+  {
+    "name" : "p5_zebra",
+    "hostname": "P5",
+    "interfaces": [
+      {
+        "name": "P5-eth0",
+        "link_to": "P4"
+      },
+      {
+        "name": "P4-eth1",
+        "link_to": "P7"
+      }
+    ]
+  },
+  {
+    "name" : "p6_zebra",
+    "hostname": "P6",
+    "interfaces": [
+      {
+        "name": "P6-eth0",
+        "link_to": "P2"
+      },
+      {
+        "name": "P6-eth1",
+        "link_to": "P4"
+      },
+      {
+        "name": "P6-eth2",
+        "link_to": "P9"
+      },
+      {
+        "name": "P6-eth3",
+        "link_to": "P10"
+      }
+    ]
+  },
+  {
+    "name" : "p7_zebra",
+    "hostname": "P7",
+    "interfaces": [
+      {
+        "name": "P7-eth0",
+        "link_to": "P5"
+      },
+      {
+        "name": "P7-eth1",
+        "link_to": "P11"
+      }
+    ]
+  },
+  {
+    "name" : "p8_zebra",
+    "hostname": "P8",
+    "interfaces": [
+      {
+        "name": "P8-eth0",
+        "link_to": "P0"
+      },
+      {
+        "name": "P8-eth1",
+        "link_to": "P9"
+      }
+    ]
+  },
+  {
+    "name" : "p9_zebra",
+    "hostname": "P9",
+    "interfaces": [
+      {
+        "name": "P9-eth0",
+        "link_to": "P8"
+      },
+      {
+        "name": "P9-eth1",
+        "link_to": "P6"
+      },
+      {
+        "name": "P9-eth2",
+        "link_to": "P12"
+      }
+    ]
+  },
+  {
+    "name" : "p10_zebra",
+    "hostname": "P10",
+    "interfaces": [
+      {
+        "name": "P10-eth0",
+        "link_to": "P6"
+      },
+      {
+        "name": "P10-eth1",
+        "link_to": "P11"
+      },
+      {
+        "name": "P10-eth2",
+        "link_to": "P12"
+      }
+    ]
+  },
+  {
+    "name" : "p11_zebra",
+    "hostname": "P11",
+    "interfaces": [
+      {
+        "name": "P11-eth0",
+        "link_to": "P7"
+      },
+      {
+        "name": "P11-eth1",
+        "link_to": "P10"
+      }
+    ]
+  },
+  {
+    "name" : "p12_zebra",
+    "hostname": "P12",
+    "interfaces": [
+      {
+        "name": "P12-eth0",
+        "link_to": "P9"
+      },
+      {
+        "name": "P12-eth1",
+        "link_to": "P10"
+      }
+    ]
+  }
+] 
