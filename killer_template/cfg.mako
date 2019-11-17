@@ -17,17 +17,16 @@
 
 # You can override any of these settings on a per-topology basis
 # Group number
-GROUPNUMBER=3
+GROUPNUMBER=${data['groupe_nbr']}
 # Node configs
-CONFIGDIR=killerNetwork
+CONFIGDIR=myNetwork
 # boot script name
 BOOT="boot"
 # startup script name
 STARTUP="start"
-PREFIXBASE="fde4:${GROUPNUMBER}"
-PREFIXLEN=32
+PREFIXBASE="fde4:${data['groupe_nbr']}"
+PREFIXLEN=${data['prefix_len']}
 # You can reuse the above two to generate ip addresses/routes, ...
-# e.g. "${PREFIXBASE}:1234::/$((PREFIXLEN+16))"
 
 # This function describes the network topology that we want to emulate
 function mk_topo {
@@ -41,20 +40,13 @@ function mk_topo {
     # <node name>-eth<count>, where count starts at 0 and is increased by 1
     # after each new interface
     # e.g. P1-eth0 links to P2-eth0
-    add_link P1 P2
-    # P1-eth1 links to P3-eth0
-    add_link P2 P3
-    # P2-eth1 links to P3-eth1
-    add_link P3 P4
-    add_link P4 P5
-    add_link P5 P6
-    add_link P6 P7
-    add_link P7 P8
-    add_link P8 P9
-    add_link P9 P10
-    add_link P10 P1
+    %for link in data['links']:
+    add_link ${link['router1']} ${link['router2']}
+    %endfor
 
     echo "@@ Bridging nodes"
-    bridge_node P1 eth1 as64512
+    %for bridge in data['bridges']:
+    bridge_node ${bridge['router']} ${bridge['VM-interface']} ${bridge['router-interface']}
+    %endfor
 }
 

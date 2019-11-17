@@ -1,0 +1,275 @@
+[
+  {
+    "name" : "p1_bgpd",
+    "ASN" : "65003",
+    "router-id" : "1.1.1.1",
+    "interfaces": [
+      {
+        "command": "1.1.1.1",
+        "addr": "fde4:3:1::1/64",
+        "arg1": "",
+        "arg2": ""  
+      }
+    ],
+    "addres-family": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ]
+  },
+  {
+    "name" : "p2_bgpd",
+    "ASN" : "65003",
+    "router-id" : "1.1.1.2",
+    "interfaces": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      } 
+    ],
+    "addres-family": [
+      { 
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": "" 
+      }
+    ]
+  },  
+  {
+    "name" : "p3_bgpd",
+    "ASN" : "65003",
+    "router-id" : "1.1.1.3",
+    "interfaces": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ],
+    "addres-family": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ]
+  },
+  {
+    "name" : "p4_bgpd",
+    "ASN" : "65003",
+    "router-id" : "1.1.1.4",
+    "interfaces": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ],
+    "addres-family": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ]
+  },
+  {
+    "name" : "p5_bgpd",
+    "ASN" : "65003",
+    "router-id" : "1.1.1.5",
+    "interfaces": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ],
+    "addres-family": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ]
+  },
+  {
+    "name" : "p6_bgpd",
+    "ASN" : "65003",
+    "router-id" : "1.1.1.6",
+    "interfaces": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ],
+    "addres-family": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ]
+  },
+  {
+    "name" : "p7_bgpd",
+    "ASN" : "65003",
+    "router-id" : "1.1.1.7",
+    "interfaces": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ],
+    "addres-family": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ]
+  },
+  {
+    "name" : "p8_bgpd",
+    "ASN" : "65003",
+    "router-id" : "1.1.1.8",
+    "interfaces": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ],
+    "addres-family": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ]
+  },
+  {
+    "name" : "p9_bgpd",
+    "ASN" : "65003",
+    "router-id" : "1.1.1.9",
+    "interfaces": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ],
+    "addres-family": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ]
+  },
+  {
+    "name" : "p10_bgpd",
+    "ASN" : "65003",
+    "router-id" : "1.1.1.10",
+    "interfaces": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ],
+    "addres-family": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ]
+  },
+  {
+    "name" : "p11_bgpd",
+    "ASN" : "65003",
+    "router-id" : "1.1.1.11",
+    "interfaces": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ],
+    "addres-family": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ]
+  },
+  {
+    "name" : "p12_bgpd",
+    "ASN" : "65003",
+    "router-id" : "1.1.1.12",
+    "interfaces": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ],
+    "addres-family": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ]
+  },
+  {
+    "name" : "p13_bgpd",
+    "ASN" : "65003",
+    "router-id" : "1.1.1.13",
+    "interfaces": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ],
+    "addres-family": [
+      {
+        "command": "",
+        "addr": "",
+        "arg1": "",
+        "arg2": ""
+      }
+    ]
+  }
+] 

@@ -1,0 +1,79 @@
+  {
+    "name": "myNetwork_cfg",
+    "groupe_nbr" : "3",
+    "prefix_len": "32",
+    "links": [
+      {
+        "router1": "P1",
+        "router2": "P2"
+      },
+      {
+        "router1": "P2",
+        "router2": "P3"
+      },
+      {
+        "router1": "P3",
+        "router2": "P4"
+      },
+      {
+        "router1": "P3",
+        "router2": "P7"
+      },
+      {
+        "router1": "P4",
+        "router2": "P5"
+      },
+      {
+        "router1": "P5",
+        "router2": "P6"
+      },
+      {
+        "router1": "P5",
+        "router2": "P7"
+      },
+      {
+        "router1": "P6",
+        "router2": "P8"
+      },
+      {
+        "router1": "P7",
+        "router2": "11"
+      },
+      {
+        "router1": "P8",
+        "router2": "P12"
+      }, 
+      {
+        "router1": "P12",
+        "router2": "P11"
+      },
+      {
+        "router1": "P1",
+        "router2": "P9"
+      }, 
+      {
+        "router1": "P9",
+        "router2": "P10"
+      },
+      {
+        "router1": "P10",
+        "router2": "P7"
+      },
+      {
+        "router1": "P10",
+        "router2": "P13"
+      },
+      {
+        "router1": "P13",
+        "router2": "11"
+      }
+    ],
+    "bridges": [
+      {
+        "router": "P1",
+        "VM-interface": "eth1",
+        "router-interface": "as64512"
+      }
+    ]
+  }
+
