@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# Create a virtual network using network namespaces and veth pairs
+# to connect them.
+# Assuming $CONFIGDIR == "cfg":
+# * Files in cfg/<Node name> will be overlaid over /etc, i.e. if a file with
+# the same name exists in both directory, the one in cfg/<Node name> will
+# be the one used.
+# * If cfg/<Node name>_$BOOT (defaults to cfg/<Node name>_boot) exists and
+# is executable, it will be executed when the node is created
+# * If cfg/<Node name>_$STARTUP (defaults to cfg/<Node name>_start) exists and
+# is executable, it will be executed when the whole network has started
+#
+
+# IMPORTANT NOTE: Node names MUST NOT exceed 9 characters.
+# This is due to the limitation to 14 characters of interface names
+
+# You can override any of these settings on a per-topology basis
+# Group number
+GROUPNUMBER=3
+# Node configs
+CONFIGDIR=myNetwork
+# boot script name
+BOOT="boot"
+# startup script name
+STARTUP="start"
+PREFIXBASE="fde4:3"
+PREFIXLEN=32
+# You can reuse the above two to generate ip addresses/routes, ...
+
+# This function describes the network topology that we want to emulate
+function mk_topo {
+    echo "@@ Adding links and nodes"
+    #                       P1 ------ P3
+    #                        \        /
+    # Build a small network   \      /
+    #                          \    /
+    #                            P2
+    # Nodes are creadted on the fly, and their interface are assigned as
+    # <node name>-eth<count>, where count starts at 0 and is increased by 1
+    # after each new interface
+    # e.g. P1-eth0 links to P2-eth0
+    add_link P1 P2
+    add_link P2 P3
+    add_link P3 P4
+    add_link P3 P7
+    add_link P4 P5
+    add_link P5 P6
+    add_link P5 P7
+    add_link P6 P8
+    add_link P7 11
+    add_link P8 P12
+    add_link P12 P11
+    add_link P1 P9
+    add_link P9 P10
+    add_link P10 P7
+    add_link P10 P13
+    add_link P13 11
+
+    echo "@@ Bridging nodes"
+    bridge_node P1 eth1 as64512
+}
+
