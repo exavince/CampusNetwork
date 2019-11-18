@@ -37,7 +37,7 @@
       },
       {
         "router1": "P7",
-        "router2": "11"
+        "router2": "P11"
       },
       {
         "router1": "P8",
@@ -65,7 +65,7 @@
       },
       {
         "router1": "P11",
-        "router2": "13"
+        "router2": "P13"
       }
     ],
     "bridges": [
