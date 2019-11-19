@@ -1,0 +1,31 @@
+#! /bin/sh
+ldconfig
+
+
+# Assigning IP addr for P1-eth
+ip link set dev P1-eth0 up
+ip link set dev P1-eth1 up
+ip link set dev as64512 up
+ip link set dev as_grp2 up
+ip link set dev as_grp1 up 
+ip link set dev as_grp4 up
+
+ip -6 addr add fde4:3:12::1/64 dev P1-eth0 
+ip -6 addr add fde4:3:a1::1/64 dev P1-eth1
+ip -6 addr add fde4::3:cafe/64 dev as64512
+ip -6 addr add fde4:3::bbbb/64 dev as_grp2
+ip -6 addr add fde4:3::3:aaaa/64 dev as_grp1
+ip -6 addr add fde4::3:cccc/64 dev as_grp4
+!ip -6 addr add fde4:a8::babe/64 dev as_grp8 
+ip -6 addr add fde4:3::11/128 dev lo
+
+-fde4::1:f00d/64
+# zebra is required to make the link between all FRRouting daemons
+# and the linux kernel routing table
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/zebra -A 127.0.0.1 -f /etc/zebra.conf -z /tmp/p1.api -i /tmp/p1_zebra.pid &
+# launching FRRouting OSPF daemon
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/ospf6d -f /etc/p1_ospf.conf -z /tmp/p1.api -i /tmp/p1_ospf6d.pid -A 127.0.0.1 &
+# launching bgpd
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/bgpd -f /etc/p1_bgpd.conf -z /tmp/p1.api -i /tmp/p1_bgpd.pid -A 127.0.0.1
+
+

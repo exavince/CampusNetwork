@@ -33,18 +33,18 @@
     "interfaces": [
       {
         "name": "P2-eth0",
-        "cost": 4,
-        "hello_time": 20,
-        "dead_time": 35,
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
         "instance_id": 0,
         "area": "0.0.0.0",
         "active": true
       },
       {
         "name": "P2-eth1",
-        "cost": 1,
-        "hello_time": 60,
-        "dead_time": 50,
+        "cost": 5,
+        "hello_time": 40,
+        "dead_time": 40,
         "instance_id": 0,
         "area": "0.0.0.0",
         "active": true

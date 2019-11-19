@@ -2,42 +2,63 @@
   {
     "name" : "p1_bgpd",
     "ASN" : "65003",
-    "router-id" : "1.1.1.1",
+    "router-id" : "10.1.1.1",
     "interfaces": [
       {
-        "command": "1.1.1.1",
-        "addr": "fde4:3:1::1/64",
-        "arg1": "",
-        "arg2": ""  
+        "command": "neighbor fde4::1 remote-as 64512" 
+      },
+      {
+        "command": "neighbor fde4::1 interface as64512" 
+      },
+      {
+        "command": "neighbor fde4:3::f4 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f4 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f8 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f8 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f4 update-source fde4:3::f1"
+      },
+      {
+        "command": "neighbor fde4:3::f8 update-source fde4:3::f1"
       }
     ],
     "addres-family": [
       {
-        "command": "",
-        "addr": "",
-        "arg1": "",
-        "arg2": ""
+        "command": "network fde4:3::/32"
+      }, 
+      {
+        "command": "neighbor fde4::1 activate" 
+      },
+      {
+        "command": "neighbor fde4:3::f4 activate"
+      },
+      { 
+        "command": "neighbor fde4:3::f8 activate"
       }
     ]
   },
   {
     "name" : "p2_bgpd",
     "ASN" : "65003",
-    "router-id" : "1.1.1.2",
+    "router-id" : "10.1.1.2",
     "interfaces": [
       {
-        "command": "",
-        "addr": "",
-        "arg1": "",
-        "arg2": ""
-      } 
+        "command": ""
+      }
     ],
     "addres-family": [
       { 
-        "command": "",
-        "addr": "",
-        "arg1": "",
-        "arg2": "" 
+        "command": "" 
+      }, 
+      {
+        "command": "" 
       }
     ]
   },  
@@ -65,21 +86,33 @@
   {
     "name" : "p4_bgpd",
     "ASN" : "65003",
-    "router-id" : "1.1.1.4",
+    "router-id" : "10.1.1.4",
     "interfaces": [
       {
-        "command": "",
-        "addr": "",
-        "arg1": "",
-        "arg2": ""
+        "command": "neighbor fde4:3::f1 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f1 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f8 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f8 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f8 update-source fde4:3::f4"
+      },
+      {
+        "command": "neighbor fde4:3::f1 update-source fde4:3::f4"
       }
     ],
     "addres-family": [
       {
-        "command": "",
-        "addr": "",
-        "arg1": "",
-        "arg2": ""
+        "command": "neighbor fde4:3::f1 activate"
+      },
+      {
+        "command": "neighbor fde4:3::f8 activate"
       }
     ]
   },
@@ -131,39 +164,57 @@
     "router-id" : "1.1.1.7",
     "interfaces": [
       {
-        "command": "",
-        "addr": "",
-        "arg1": "",
-        "arg2": ""
+        "command": ""
+      },
+      {
+        "command": ""
       }
     ],
     "addres-family": [
       {
-        "command": "",
-        "addr": "",
-        "arg1": "",
-        "arg2": ""
+        "command": ""
+      },
+      {
+        "command": ""
+      }, 
+      {
+        "command": ""
+      },
+      {
+        "command": ""
       }
     ]
   },
   {
     "name" : "p8_bgpd",
     "ASN" : "65003",
-    "router-id" : "1.1.1.8",
+    "router-id" : "10.1.1.8",
     "interfaces": [
       {
-        "command": "",
-        "addr": "",
-        "arg1": "",
-        "arg2": ""
+        "command": "neighbor fde4:3::f1 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f1 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f4 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f4 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f4 update-source fde4:3::f8"
+      },
+      {
+        "command": "neighbor fde4:3::f1 update-source fde4:3::f8"
       }
     ],
     "addres-family": [
       {
-        "command": "",
-        "addr": "",
-        "arg1": "",
-        "arg2": ""
+        "command": "neighbor fde4:3::f1 activate"
+      },
+      {
+        "command": "neighbor fde4:3::f4 activate"
       }
     ]
   },

@@ -1,0 +1,6 @@
+/home/vagrant/Group_folder/CampusNetwork/myNetwork_template/myNetwork/templates /templates none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/myNetwork_template/myNetwork/puppetmodules /puppetmodules none rw,bind 0 0
+/run/P2 /run none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/myNetwork_template/myNetwork/templates /templates none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/myNetwork_template/myNetwork/puppetmodules /puppetmodules none rw,bind 0 0
+/run/P2 /run none rw,bind 0 0

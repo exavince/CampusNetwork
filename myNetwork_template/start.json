@@ -9,6 +9,14 @@
       {
         "name": "P1-eth1",
         "link_to": "fde4:3:10::1/64"
+      },
+      {
+        "name": "lo",
+        "link_to": "fde4:3::f1/128"
+      },
+      {
+        "name": "as64512",
+        "link_to": "fde4::3:cafe/64"
       }
     ]
   }, 
@@ -22,6 +30,10 @@
       {
         "name": "P2-eth1",
         "link_to": "fde4:3:2::2/64"
+      },
+      {
+        "name": "lo",
+        "link_to": "fde4:3::f2/128"
       }
     ]
   }, 
@@ -39,6 +51,10 @@
       {
         "name": "P3-eth2",
         "link_to": "fde4:3:4::3/64"
+      },
+      {
+        "name": "lo",
+        "link_to": "fde4:3::f3/128"
       }
     ]
   },
@@ -56,6 +72,10 @@
       {
         "name": "as64512",
         "link_to": "fde4::3:cafe/64"
+      },
+      {
+        "name": "lo",
+        "link_to": "fde4:3::f4/128"
       }
     ]
   },
@@ -73,6 +93,10 @@
       {
         "name": "P5-eth2",
         "link_to": "fde4:3:6::5/64"
+      },
+      {
+        "name": "lo",
+        "link_to": "fde4:3::f5/128"
       }
     ]
   },
@@ -86,6 +110,10 @@
       {
         "name": "P6-eth1",
         "link_to": "fde4:3:8::6/64"
+      },
+      {
+        "name": "lo",
+        "link_to": "fde4:3::f6/128"
       }
     ]
   },
@@ -107,6 +135,10 @@
       {
         "name": "P7-eth3",
         "link_to": "fde4:3:e::7/64"
+      },
+      {
+        "name": "lo",
+        "link_to": "fde4:3::f7/128"
       }
     ]
   },
@@ -120,6 +152,10 @@
       {
         "name": "P8-eth1",
         "link_to": "fde4:3:9::8/64"
+      },
+      {
+        "name": "lo",
+        "link_to": "fde4:3::f8/128"
       }
     ]
   },
@@ -133,6 +169,10 @@
       {
         "name": "P9-eth1",
         "link_to": "fde4:3:f::9/64"
+      },
+      {
+        "name": "lo",
+        "link_to": "fde4:3::f9/128"
       }
     ]
   },
@@ -150,6 +190,10 @@
       {
         "name": "P10-eth2",
         "link_to": "fde4:3:d::a/64"
+      },
+      {
+        "name": "lo",
+        "link_to": "fde4:3::fa/128"
       }
     ]
   },
@@ -167,6 +211,10 @@
       {
         "name": "P11-eth2",
         "link_to": "fde4:3:c::b/64"
+      },
+      {
+        "name": "lo",
+        "link_to": "fde4:3::fb/128"
       }
     ]
   },
@@ -180,6 +228,10 @@
       {
         "name": "P12-eth1",
         "link_to": "fde4:3:a::c/64"
+      },
+      {
+        "name": "lo",
+        "link_to": "fde4:3::fc/128"
       }
     ]
   },
@@ -193,6 +245,10 @@
       {
         "name": "P13-eth1",
         "link_to": "fde4:3:c::d/64"
+      },
+      {
+        "name": "lo",
+        "link_to": "fde4:3::fd/128"
       }
     ]
   }
