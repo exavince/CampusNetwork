@@ -5,10 +5,19 @@
     "router-id" : "10.1.1.1",
     "interfaces": [
       {
+        "command": "bgp cluster-id 110.0.0.1"
+      },
+      {
         "command": "neighbor fde4::1 remote-as 64512" 
       },
       {
         "command": "neighbor fde4::1 interface as64512" 
+      },
+      {
+        "command": "neighbor fde4:3::f2 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f2 next-hop-self"
       },
       {
         "command": "neighbor fde4:3::f4 remote-as 65003"
@@ -23,16 +32,34 @@
         "command": "neighbor fde4:3::f8 next-hop-self"
       },
       {
+        "command": "neighbor fde4:3::fa remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::fa next-hop-self"
+      },
+      {
         "command": "neighbor fde4:3::f4 update-source fde4:3::f1"
       },
       {
         "command": "neighbor fde4:3::f8 update-source fde4:3::f1"
+      },
+      {
+        "command": "neighbor fde4:3::f2 update-source fde4:3::f1"
+      },
+      {
+        "command": "neighbor fde4:3::fa update-source fde4:3::f1"
       }
     ],
     "addres-family": [
       {
         "command": "network fde4:3::/32"
+      },
+      {
+        "command": "neighbor fde4:3::f2 route-reflector-client"
       }, 
+      {
+        "command": "neighbor fde4:3::fa route-reflector-client"
+      },
       {
         "command": "neighbor fde4::1 activate" 
       },
@@ -41,6 +68,12 @@
       },
       { 
         "command": "neighbor fde4:3::f8 activate"
+      },
+      {
+        "command": "neighbor fde4:3::f2 activate"
+      },
+      {
+        "command": "neighbor fde4:3::fa activate"
       }
     ]
   },
@@ -50,36 +83,84 @@
     "router-id" : "10.1.1.2",
     "interfaces": [
       {
-        "command": ""
+        "command": "bgp cluster-id 110.0.0.2"
+      },
+      {
+        "command": "neighbor fde4:3::f1 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f1 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f4 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f4 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f3 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f3 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f9 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f9 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f1 update-source fde4:3::f2"
+      },
+      {
+        "command": "neighbor fde4:3::f3 update-source fde4:3::f2"
+      },
+      {
+        "command": "neighbor fde4:3::f4 update-source fde4:3::f2"
+      },
+      {
+        "command": "neighbor fde4:3::f9 update-source fde4:3::f2"
       }
     ],
     "addres-family": [
+      {
+        "command": "neighbor fde4:3::f1 activate"
+      },
+      {
+        "command": "neighbor fde4:3::f4 activate"
+      },
+      {
+        "command": "neighbor fde4:3::f3 activate"
+      },
+      {
+        "command": "neighbor fde4:3::f9 activate"
+      },
       { 
-        "command": "" 
+        "command": "neighbor fde4:3::f3 route-reflector-client" 
       }, 
       {
-        "command": "" 
+        "command": "neighbor fde4:3::f9 route-reflector-client"
       }
     ]
   },  
   {
     "name" : "p3_bgpd",
     "ASN" : "65003",
-    "router-id" : "1.1.1.3",
+    "router-id" : "10.1.1.3",
     "interfaces": [
       {
-        "command": "",
-        "addr": "",
-        "arg1": "",
-        "arg2": ""
+        "command": "neighbor fde4:3::f2 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f2 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f2 update-source fde4:3::f3"
       }
     ],
     "addres-family": [
       {
-        "command": "",
-        "addr": "",
-        "arg1": "",
-        "arg2": ""
+        "command": "neighbor fde4:3::f2 activate"
       }
     ]
   },
@@ -88,6 +169,21 @@
     "ASN" : "65003",
     "router-id" : "10.1.1.4",
     "interfaces": [
+      {
+        "command": "bgp cluster-id 110.0.0.1"
+      },
+      {
+        "command": "neighbor fde4:3::f2 route-reflector-client"
+      },
+      {
+        "command": "neighbor fde4:3::f10 route-reflector-client"
+      },
+      {
+        "command": "neighbor fde4:3::f11 route-reflector-client"
+      },
+      {
+        "command": "neighbor fde4:3::f6 route-reflector-client"
+      },
       {
         "command": "neighbor fde4:3::f1 remote-as 65003"
       },
@@ -101,10 +197,46 @@
         "command": "neighbor fde4:3::f8 next-hop-self"
       },
       {
+        "command": "neighbor fde4:3::f2 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f2 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::fa remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::fa next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::fb remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::fb next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f6 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f6 next-hop-self"
+      },
+      {
         "command": "neighbor fde4:3::f8 update-source fde4:3::f4"
       },
       {
         "command": "neighbor fde4:3::f1 update-source fde4:3::f4"
+      },
+      {
+        "command": "neighbor fde4:3::f2 update-source fde4:3::f4"
+      },
+      {
+        "command": "neighbor fde4:3::fa update-source fde4:3::f4"
+      },
+      {
+        "command": "neighbor fde4:3::fb update-source fde4:3::f4"
+      },
+      {
+        "command": "neighbor fde4:3::f6 update-source fde4:3::f4"
       }
     ],
     "addres-family": [
@@ -113,75 +245,138 @@
       },
       {
         "command": "neighbor fde4:3::f8 activate"
+      },
+      {
+        "command": "neighbor fde4:3::f2 activate"
+      },
+      {
+        "command": "neighbor fde4:3::fa activate"
+      },
+      {
+        "command": "neighbor fde4:3::fb activate"
+      },
+      {
+        "command": "neighbor fde4:3::f6 activate"
+      },
+      {
+        "command": "neighbor fde4:3::f2 route-reflector-client"
+      },
+      {
+        "command": "neighbor fde4:3::fa route-reflector-client"
+      },
+      {
+        "command": "neighbor fde4:3::fb route-reflector-client"
+      },
+      {
+        "command": "neighbor fde4:3::f6 route-reflector-client"
       }
     ]
   },
   {
     "name" : "p5_bgpd",
     "ASN" : "65003",
-    "router-id" : "1.1.1.5",
+    "router-id" : "10.1.1.5",
     "interfaces": [
       {
-        "command": "",
-        "addr": "",
-        "arg1": "",
-        "arg2": ""
+        "command": "neighbor fde4:3::f6 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f6 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f6 update-source fde4:3::f1"
       }
     ],
     "addres-family": [
       {
-        "command": "",
-        "addr": "",
-        "arg1": "",
-        "arg2": ""
+        "command": "neighbor fde4:3::6 activate"
       }
     ]
   },
   {
     "name" : "p6_bgpd",
     "ASN" : "65003",
-    "router-id" : "1.1.1.6",
+    "router-id" : "10.1.1.6",
     "interfaces": [
       {
-        "command": "",
-        "addr": "",
-        "arg1": "",
-        "arg2": ""
+        "command": "bgp cluster-id 110.0.0.2"
+      },
+      {
+        "command": "neighbor fde4:3::f5 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f5 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f4 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f4 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f8 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f8 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::fc remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::fc next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f5 update-source fde4:3::f6"
+      },
+      {
+        "command": "neighbor fde4:3::f4 update-source fde4:3::f6"
+      },
+      {
+        "command": "neighbor fde4:3::fc update-source fde4:3::f6"
+      },
+      {
+        "command": "neighbor fde4:3::f8 update-source fde4:3::f6"
       }
     ],
     "addres-family": [
       {
-        "command": "",
-        "addr": "",
-        "arg1": "",
-        "arg2": ""
+        "command": "neighbor fde4:3::6 activate" 
+      },
+      {
+        "command": "neighbor fde4:3::f4 activate"
+      },
+      { 
+        "command": "neighbor fde4:3::f5 activate"
+      },
+      {
+        "command": "neighbor fde4:3::fc activate" 
+      },
+      {
+        "command": "neighbor fde4:3::f5 route-reflector-client"
+      },
+      {
+        "command": "neighbor fde4:3::fc route-reflector-client"
       }
     ]
   },
   {
     "name" : "p7_bgpd",
     "ASN" : "65003",
-    "router-id" : "1.1.1.7",
+    "router-id" : "10.1.1.7",
     "interfaces": [
       {
-        "command": ""
+        "command": "neighbor fde4:3::fc remote-as 65003"
       },
       {
-        "command": ""
+        "command": "neighbor fde4:3::fc next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::fc update-source fde4:3::f7"
       }
     ],
     "addres-family": [
       {
-        "command": ""
-      },
-      {
-        "command": ""
-      }, 
-      {
-        "command": ""
-      },
-      {
-        "command": ""
+        "command": "neighbor fde4:3::fc activate"
       }
     ]
   },
@@ -190,6 +385,9 @@
     "ASN" : "65003",
     "router-id" : "10.1.1.8",
     "interfaces": [
+      {
+        "command": "bgp cluster-id 110.0.0.1"
+      },
       {
         "command": "neighbor fde4:3::f1 remote-as 65003"
       },
@@ -201,6 +399,18 @@
       },
       {
         "command": "neighbor fde4:3::f4 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f6 remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::f6 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::fb remote-as 65003"
+      },
+      {
+        "command": "neighbor fde4:3::fb next-hop-self"
       },
       {
         "command": "neighbor fde4:3::f4 update-source fde4:3::f8"
@@ -212,6 +422,12 @@
     "addres-family": [
       {
         "command": "neighbor fde4:3::f1 activate"
+      },
+      {
+        "command": "neighbor fde4:3::f6 route-reflector-client"
+      },
+      {
+        "command": "neighbor fde4:3::f11 route-reflector-client"
       },
       {
         "command": "neighbor fde4:3::f4 activate"
@@ -242,8 +458,11 @@
   {
     "name" : "p10_bgpd",
     "ASN" : "65003",
-    "router-id" : "1.1.1.10",
+    "router-id" : "10.1.1.10",
     "interfaces": [
+      {
+        "command": "bgp cluster-id 110.0.0.2"
+      },
       {
         "command": "",
         "addr": "",
@@ -263,8 +482,11 @@
   {
     "name" : "p11_bgpd",
     "ASN" : "65003",
-    "router-id" : "1.1.1.11",
+    "router-id" : "10.1.1.11",
     "interfaces": [
+      {
+        "command": "bgp cluster-id 110.0.0.2"
+      },
       {
         "command": "",
         "addr": "",
@@ -273,6 +495,12 @@
       }
     ],
     "addres-family": [
+      {
+        "command": "neighbor fde4:3::7 route-reflector-client"
+      },
+      {
+        "command": "neighbor fde4:3::f13 route-reflector-client"
+      },
       {
         "command": "",
         "addr": "",
