@@ -578,7 +578,7 @@
       },
       {
         "command": "neighbor fde4:3::f6 next-hop-self"
-      },
+      }
     ]
   },
   {
