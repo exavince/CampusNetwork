@@ -54,3 +54,5 @@ bird:x:113:
 frr:x:92:
 frrvty:x:85:frr
 puppet:x:114:
+quaggavty:x:115:
+quagga:x:116:

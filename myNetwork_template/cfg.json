@@ -73,6 +73,26 @@
         "router": "P1",
         "VM-interface": "eth1",
         "router-interface": "as64512"
+      },
+      {
+        "router": "P4",
+        "VM-interface": "eth2",
+        "router-interface": "as_grp2"
+      },
+      {
+        "router": "P1",
+        "VM-interface": "eth3",
+        "router-interface": "as_grp7"
+      },
+      {
+        "router": "P8",
+        "VM-interface": "eth4",
+        "router-interface": "as_grp1"
+      },
+      {
+        "router": "P4",
+        "VM-interface": "eth5",
+        "router-interface": "as_grp4"
       }
     ]
   }

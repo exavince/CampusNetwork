@@ -21,3 +21,7 @@ address-family ipv6 unicast
  ${rule['command']}
 %endfor
 exit address-family
+
+%for community in data['communities']:
+${community['rule']}
+%endfor

@@ -9,11 +9,13 @@ ip link set dev P8-eth1 up
 ip -6 addr add fde4:3:9::8/64 dev P8-eth1
 ip link set dev lo up
 ip -6 addr add fde4:3::f8/128 dev lo
+ip link set dev as_grp1 up
+ip -6 addr add fde4:3::3:aaaa/64 dev as_grp1
 
 
 # zebra is required to make the link between all FRRouting daemons
 # and the linux kernel routing table
-LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/zebra -A 127.0.0.1 -f /etc/zebra.conf -z /tmp/p8.api -i /tmp/p8_zebra.pid &
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/zebra -A 127.0.0.1 -f /etc/zebra.conf -z /tmp/p8.api -i /tmp/p8_zebra.pid --v6-rr-semantics &
 # launching FRRouting OSPF daemon
 LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/ospf6d -f /etc/p8_ospf.conf -z /tmp/p8.api -i /tmp/p8_ospf6d.pid -A 127.0.0.1 &
 # launching bgpd

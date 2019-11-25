@@ -17,6 +17,10 @@
       {
         "name": "as64512",
         "link_to": "fde4::3:cafe/64"
+      },
+      {
+        "name": "as_grp7",
+        "link_to": "fde4:3::7:cafe/64"
       }
     ]
   }, 
@@ -76,6 +80,14 @@
       {
         "name": "lo",
         "link_to": "fde4:3::f4/128"
+      },
+      {
+        "name": "as_grp2",
+        "link_to": "fde4:3:2::bbbb/64"
+      },
+      {
+        "name": "as_grp4",
+        "link_to": "fde4:4:f001:3::cafe/64"
       }
     ]
   },
@@ -156,6 +168,10 @@
       {
         "name": "lo",
         "link_to": "fde4:3::f8/128"
+      },
+      {
+        "name": "as_grp1",
+        "link_to": "fde4:3::3:aaaa/64"
       }
     ]
   },

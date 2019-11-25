@@ -8,10 +8,22 @@
         "command": "bgp cluster-id 110.0.0.1"
       },
       {
+        "command": "neighbor upstream capability dynamic"
+      },
+      {
         "command": "neighbor fde4::1 remote-as 64512" 
       },
       {
         "command": "neighbor fde4::1 interface as64512" 
+      },
+      {
+        "command": "neighbor fde4:3::3:ffff remote-as 65007"
+      },
+      {
+        "command": "neighbor fde4:3::3:ffff interface as_grp7"
+      },
+      {
+        "command": "neighbor fde4::1 peer-group upstream"
       },
       {
         "command": "neighbor fde4:3::f2 remote-as 65003"
@@ -46,6 +58,9 @@
         "command": "neighbor fde4::1 activate" 
       },
       {
+        "command": "neighbor fde4:3::3:ffff activate"
+      },
+      {
         "command": "neighbor fde4:3::f2 activate"
       },
       {
@@ -74,6 +89,14 @@
       }, 
       {
         "command": "neighbor fde4:3::fa route-reflector-client"
+      }
+    ],
+    "communities": [
+      {
+        "rule": "bgp community-list standard cm-cust-only permit 64512:300"
+      },
+      {
+        "rule": "bgp community-list standard cm-learnt-upstream permit 64512:3000"
       }
     ]
   },
@@ -124,22 +147,27 @@
         "command": "neighbor fde4:3::f9 activate"
       },
       {
-        "command": "neighbor fde4:3::f1 next-hop-self"
+        "command": ""
       },
       {
-        "command": "neighbor fde4:3::f3 next-hop-self"
+        "command": ""
       },
       {
-        "command": "neighbor fde4:3::f4 next-hop-self"
+        "command": ""
       },
       {
-        "command": "neighbor fde4:3::f9 next-hop-self"
+        "command": ""
       },
       { 
         "command": "neighbor fde4:3::f3 route-reflector-client" 
       }, 
       {
         "command": "neighbor fde4:3::f9 route-reflector-client"
+      }
+    ],
+    "communities": [
+      {
+        "rule": ""
       }
     ]
   },  
@@ -160,7 +188,12 @@
         "command": "neighbor fde4:3::f2 activate"
       },
       {
-        "command": "neighbor fde4:3::f2 next-hop-self"
+        "command": ""
+      }
+    ],
+    "communities": [
+      {
+        "rule": ""
       }
     ]
   },
@@ -171,6 +204,30 @@
     "interfaces": [
       {
         "command": "bgp cluster-id 110.0.0.1"
+      },
+      {
+        "command": "neighbor cust capablity dynamic"
+      },
+      {
+        "command": "neighbor fde4:3:2::2:face peer-group cust"
+      },
+      {
+        "command": "neighbor fde4:3:2::2:face remote-as 65002"
+      },
+      {
+        "command": "neighbor fde4:3:2::2:face interface as_grp2"
+      },
+      {
+        "command": "neighbor fde4:4:f001:3::beef remote-as 65004"
+      },
+      {
+        "command": "neighbor fde4:4:f001:3::beef interface as_grp4"
+      },
+      {
+        "command": "neighbor fde4:4:f001:3::beef password lingi2142gr3gr4"
+      },
+      {
+        "command": "neighbor fde4::1 peer-group cust"
       },
       {
         "command": "neighbor fde4:3::f1 remote-as 65003"
@@ -194,9 +251,6 @@
         "command": "neighbor fde4:3::f8 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f8 next-hop-self"
-      },
-      {
         "command": "neighbor fde4:3::f8 update-source fde4:3::f4"
       },
       {
@@ -213,6 +267,9 @@
       }
     ],
     "addres-family": [
+      {
+        "command": "neighbor fde4:3:2::2:face activate"
+      },
       {
         "command": "neighbor fde4:3::f1 activate"
       },
@@ -232,6 +289,9 @@
         "command": "neighbor fde4:3::fb activate"
       },
       {
+        "command": "neighbor fde4:4:f001:3::beef activate"
+      },
+      {
         "command": "neighbor fde4:3::f1 next-hop-self"
       },
       {
@@ -239,6 +299,9 @@
       },
       {
         "command": "neighbor fde4:3::f6 next-hop-self"
+      },
+      {
+        "command": "neighbor fde4:3::f8 next-hop-self"
       },
       {
         "command": "neighbor fde4:3::fa next-hop-self"
@@ -258,6 +321,11 @@
       {
         "command": "neighbor fde4:3::fb route-reflector-client"
       }
+    ],
+    "communities": [
+      {
+        "rule": ""
+      }
     ]
   },
   {
@@ -274,10 +342,12 @@
     ],
     "addres-family": [
       {
-        "command": "neighbor fde4:3::6 activate"
-      },
+        "command": "neighbor fde4:3::f6 activate"
+      }
+    ],
+    "communities": [
       {
-        "command": "neighbor fde4:3::f6 next-hop-self"
+        "rule": ""
       }
     ]
   },
@@ -291,9 +361,6 @@
       },
       {
         "command": "neighbor fde4:3::f4 remote-as 65003"
-      },
-      {
-        "command": "neighbor fde4:3::f4 next-hop-self"
       },
       {
         "command": "neighbor fde4:3::f4 update-source fde4:3::f6"
@@ -331,22 +398,15 @@
         "command": "neighbor fde4:3::fc activate" 
       },
       {
-        "command": "neighbor fde4:3::f4 next-hop-self"
-      },
-      {
-        "command": "neighbor fde4:3::f5 next-hop-self"
-      },
-      {
-        "command": "neighbor fde4:3::f8 next-hop-self"
-      },
-      {
-        "command": "neighbor fde4:3::fc next-hop-self"
-      },
-      {
         "command": "neighbor fde4:3::f5 route-reflector-client"
       },
       {
         "command": "neighbor fde4:3::fc route-reflector-client"
+      }
+    ],
+    "communities": [
+      {
+        "rule": ""
       }
     ]
   },
@@ -365,9 +425,11 @@
     "addres-family": [
       {
         "command": "neighbor fde4:3::fb activate"
-      },
+      }
+    ],
+    "communities": [
       {
-        "command": "neighbor fde4:3::fb next-hop-self"
+        "rule": ""
       }
     ]
   },
@@ -378,6 +440,15 @@
     "interfaces": [
       {
         "command": "bgp cluster-id 110.0.0.1"
+      },
+      {
+        "command": "neighbor fde4:3::1:f00d remote-as 65001"
+      },
+      {
+        "command": "neighbor fde4:3::1:f00d interface as_grp1"
+      },
+      {
+        "command": "neighbor fde4:3::1:f00d password 2142AS6500165003"
       },
       {
         "command": "neighbor fde4:3::f1 remote-as 65003"
@@ -406,6 +477,9 @@
     ],
     "addres-family": [
       {
+        "command": "neighbor fde4:3::1:f00d activate"
+      },
+      {
         "command": "neighbor fde4:3::f1 activate"
       },
       {
@@ -416,6 +490,9 @@
       },
       {
         "command": "neighbor fde4:3::fb activate"
+      },
+      {
+        "command": "network fde4:3::/32"
       },
       {
         "command": "neighbor fde4:3::f1 next-hop-self"
@@ -435,6 +512,11 @@
       {
         "command": "neighbor fde4:3::fb route-reflector-client"
       }
+    ],
+    "communities": [
+      {
+        "rule": ""
+      }
     ]
   },
   {
@@ -452,9 +534,11 @@
     "addres-family": [
       {
         "command": "neighbor fde4:3::f2 activate"
-      },
+      }
+    ],
+    "communities": [
       {
-        "command": "neighbor fde4:3::f2 next-hop-self"
+        "rule": ""
       }
     ]
   },
@@ -485,12 +569,11 @@
       },
       {
         "command": "neighbor fde4:3::f4 activate"
-      },
+      }
+    ],
+    "communities": [
       {
-        "command": "neighbor fde4:3::f1 next-hop-self"
-      },
-      {
-        "command": "neighbor fde4:3::f4 next-hop-self"
+        "rule": ""
       }
     ]
   },
@@ -524,7 +607,7 @@
         "command": "neighbor fde4:3::fd remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::fd update-source fde4:3::fb"
+        "command": ""
       }
     ],
     "addres-family": [
@@ -538,25 +621,18 @@
         "command": "neighbor fde4:3::f8 activate"
       },
       {
-        "command": "neighbor fde4:3::d activate"
+        "command": "neighbor fde4:3::fd activate"
       },
       {
-        "command": "neighbor fde4:3::f4 next-hop-self"
-      },
-      {
-        "command": "neighbor fde4:3::f7 next-hop-self"
-      },
-      {
-        "command": "neighbor fde4:3::f8 next-hop-self"
-      },
-      {
-        "command": "neighbor fde4:3::fd next-hop-self"
-      },
-      {
-        "command": "neighbor fde4:3::7 route-reflector-client"
+        "command": "neighbor fde4:3::f7 route-reflector-client"
       },
       {
         "command": "neighbor fde4:3::fd route-reflector-client"
+      }
+    ],
+    "communities": [
+      {
+        "rule": ""
       }
     ]
   },
@@ -575,9 +651,11 @@
     "addres-family": [
       {
         "command": "neighbor fde4:3::f6 activate"
-      },
+      }
+    ],
+    "communities": [
       {
-        "command": "neighbor fde4:3::f6 next-hop-self"
+        "rule": ""
       }
     ]
   },
@@ -596,9 +674,11 @@
     "addres-family": [
       {
         "command": "neighbor fde4:3::fb activate"
-      },
+      }
+    ],
+    "communities": [
       {
-        "command": "neighbor fde4:3::fb next-hop-self"
+        "rule": ""
       }
     ]
   }

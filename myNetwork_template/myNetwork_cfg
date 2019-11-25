@@ -59,5 +59,9 @@ function mk_topo {
 
     echo "@@ Bridging nodes"
     bridge_node P1 eth1 as64512
+    bridge_node P4 eth2 as_grp2
+    bridge_node P1 eth3 as_grp7
+    bridge_node P8 eth4 as_grp1
+    bridge_node P4 eth5 as_grp4
 }
 
