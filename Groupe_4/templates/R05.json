@@ -1,0 +1,28 @@
+{
+  "name": "R05",
+  "rnum": "5",
+  "ifaces": {
+    "routing": [
+      ["5", "4"],
+      ["13", "12"],
+      ["1a", "1b"],
+      ["1c", "1d"]
+    ],
+    "lan": []
+  },
+  "bgp":{
+	  "self_as":"65004",
+	  "i" :{
+		  "neighbors":["9","10"],
+      "pwd": ["rrbgpREPLACEME%1", "rrbgpREPLACEME%0"]
+	  },
+	  "rr_clients": {
+      "clients": ["7","8","6"],
+      "pwd": [
+        "rrbgpREPLACEME%0",
+        "rrbgpREPLACEME%1",
+        "rrbgpREPLACEME%2"
+      ]
+    }
+  }
+}

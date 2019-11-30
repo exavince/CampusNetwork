@@ -1,0 +1,20 @@
+{
+  "name": "R08",
+  "rnum": "8",
+  "ifaces": {
+    "routing": [
+      ["f", "e"],
+      ["17", "16"],
+      ["1f", "1e"],
+      ["21", "20"]
+    ],
+    "lan": []
+  },
+  "bgp":{
+	  "self_as":"65004",
+	  "i":{
+		  "neighbors":["4","5"],
+      "pwd": ["rrbgpREPLACEME%2", "rrbgpREPLACEME%1"]
+	  }
+  }
+}

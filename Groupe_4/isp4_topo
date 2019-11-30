@@ -1,0 +1,115 @@
+#!/bin/bash
+
+# Create a virtual network using network namespaces and veth pairs
+# to connect them.
+# Assuming $CONFIGDIR == "cfg":
+# * Files in cfg/<Node name> will be overlaid over /etc, i.e. if a file with
+# the same name exists in both directory, the one in cfg/<Node name> will
+# be the one used.
+# * If cfg/<Node name>_$BOOT (defaults to cfg/<Node name>_boot) exists and
+# is executable, it will be executed when the node is created
+# * If cfg/<Node name>_$STARTUP (defaults to cfg/<Node name>_start) exists and
+# is executable, it will be executed when the whole network has started
+#
+
+# IMPORTANT NOTE: Node names MUST NOT exceed 9 characters.
+# This is due to the limitation to 14 characters of interface names
+
+# You can override any of these settings on a per-topology basis
+# Group number
+GROUPNUMBER=4
+# Node configs  
+CONFIGDIR=network_cfg
+# boot script name
+BOOT="boot"
+# startup script name
+STARTUP="start"
+PREFIXBASE="fde4:${GROUPNUMBER}"
+PREFIXLEN=32
+# You can reuse the above two to generate ip addresses/routes, ...
+# e.g. "${PREFIXBASE}:1234::/$((PREFIXLEN+16))"
+
+# This function describes the network topology that we want to emulate
+function mk_topo {
+    echo "@@ Adding links and nodes"
+    # Build a small network R1 - R2 - R3 - R4
+    # The network is a ring as the UCL network
+    # Nodes are creadted on the fly, and their interface are assigned as
+    # <node name>-eth<count>, where count starts at 0 and is increased by 1
+    # after each new interface
+    # R1-eth0 links to R3-eth0
+    add_link R01 R03
+    # R1-eth1 links to R5-eth0
+    add_link R01 R05
+    # R1-eth2 links to R2-eth0
+    add_link R01 R02
+    # R1-eth3 links to R7-eth0
+    add_link R01 R07
+    # R2-eth1 links to R4-eth0
+    add_link R02 R04
+    # R2-eth2 links to R6-eth0
+    add_link R02 R06
+    # R2-eth3 links to R8-eth0
+    add_link R02 R08
+    # R3-eth1 links to R7-eth1
+    add_link R03 R07
+    # R3-eth2 links to R5-eth1
+    add_link R03 R05
+    # R3-eth3 links to R4-eth1
+    add_link R03 R04
+    # R4-eth2 links to R8-eth1
+    add_link R04 R08
+    # R4-eth3 links to R6-eth1
+    add_link R04 R06
+    # R5-eth2 links to R7-eth2
+    add_link R05 R07
+    # R5-eth3 links to R6-eth2
+    add_link R05 R06
+    # R6-eth3 links to R8-eth2
+    add_link R06 R08
+    # R8-eth3 links to R7-eth3
+    add_link R08 R07
+    # R9-eth0 links to R10-eth0
+    add_link R09 R10
+    # R9-eth1 links to R11-eth0
+    add_link R09 R11
+    # R9-eth2 links to R01-eth4
+    add_link R09 R01
+    # R11-eth1 links to R12-eth0
+    add_link R11 R12
+    # R10-eth1 links to R12-eth1
+    add_link R10 R12
+    # R10-eth2 links to R13-eth0
+    add_link R10 R13
+    # R12-eth2 links to R13-eth1
+    add_link R12 R13
+    # R13-eth2 links to R03-eth4
+    add_link R13 R03
+    # R14-eth0 links to R11-eth2
+    add_link R14 R11
+    # R14-eth1 links to R09-eth3
+    add_link R14 R09
+    
+
+    echo "@@ Adding LANs"
+    # Create a new LAN (subnet), attached to BELNET, with 2 hosts: B1 and B2
+    #mk_LAN BELNET B1 B2
+    # Same but with 4 hosts in LLN
+    #mk_LAN LLN L1 L2 L3 L4
+    mk_LAN R10 MP01
+
+    echo "@@ Briding the network"
+    # Connect R9 to thomAS on the eth1 of the vm
+    bridge_node R09 eth1 bgp_as64512
+    # Connect R11 to gr5 on the eth2 of the vm
+    bridge_node R11 eth2 bgp_as65005
+    #connect R10 to gr3 for a test but could be change to connect to groupe 3
+    bridge_node R10 eth3 bgp_as65003
+    #connect R12 to on eth4 to groupe 2
+    bridge_node R12 eth4 bgp_as65002
+    #connect R13 to on eth5 to groupe 1
+    bridge_node R13 eth5 bgp_as65001
+    #connect R14 to on eth6 to groupe 8
+    bridge_node R14 eth6 bgp_as65008
+}
+

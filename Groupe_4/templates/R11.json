@@ -1,0 +1,33 @@
+{
+	"name": "R11",
+  "rnum": "11",
+  "ifaces": {
+    "routing": [
+      ["25", "24"],
+      ["28","29"],
+      ["33","32"]
+    ],
+    "lan": []
+  },
+  "bgp": {
+	  "self_as": "65004",
+    "e": {
+      "ifaces":     ["bgp_as65005"],
+      "iface_ip":   ["fde4:4:f001:5::beef"],
+	    "neighbors":   ["fde4:4:f001:5::dead"],
+	    "up1_as":     ["65005"],
+      "pwd":  [""]
+    },
+    "i": {
+      "neighbors":  ["9","10","13","12","14"],
+      "pwd": ["ibgpREPLACEME#", "ibgpREPLACEME#", "ibgpREPLACEME#", "ibgpREPLACEME#","ibgpREPLACEME#"]
+    },
+    "rr_clients": {
+      "clients": ["1","4"],
+      "pwd": [
+        "rrbgpREPLACEME%0",
+        "rrbgpREPLACEME%1"
+      ]
+    }
+  }
+}
