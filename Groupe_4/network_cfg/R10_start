@@ -1,0 +1,43 @@
+#! /bin/bash
+
+# Startup script for router R10
+
+ldconfig
+
+
+
+
+
+ip -6 addr add fde4:4:f000:1::a/128 dev lo
+
+   
+ip link set dev R10-eth0 up
+ip -6 addr add fde4:4:f000::23/127 dev R10-eth0
+   
+ip link set dev R10-eth1 up
+ip -6 addr add fde4:4:f000::2a/127 dev R10-eth1
+   
+ip link set dev R10-eth2 up
+ip -6 addr add fde4:4:f000::2c/127 dev R10-eth2
+
+
+   
+ip link set dev R10-lan0 up
+ip -6 addr add fde4:4:f000:20::/60 dev R10-lan0
+
+# zebra is required to make the link between all FRRouting daemons
+# and the linux kernel routing table
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/zebra -A 127.0.0.1 -f /etc/R10_zebra.conf -z /tmp/R10.api -i /tmp/R10_zebra.pid --v6-rr-semantics &
+
+# launching FRRouting OSPF daemon
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/ospf6d -f /etc/R10_ospf.conf -z /tmp/R10.api -i /tmp/R10_ospf6d.pid -A 127.0.0.1 &
+
+
+#configuring the bgp interfaces
+ip link set dev bgp_as65003 up
+ip -6 addr add fde4:4:f001:3::beef/64 dev bgp_as65003 
+#lauching FRRouting BGP daemon
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/bgpd -f /etc/R10_bgpd.conf -z /tmp/R10.api -i /tmp/R10_bgpd.pid -A 127.0.0.1 &
+
+# Launching nftables firewall
+LD_LIBRARY_PATH=/usr/local/lib nft -f /etc/R10_nftables.conf

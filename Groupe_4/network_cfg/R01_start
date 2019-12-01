@@ -1,0 +1,42 @@
+#! /bin/bash
+
+# Startup script for router R01
+
+ldconfig
+
+
+
+
+
+ip -6 addr add fde4:4:f000:1::1/128 dev lo
+
+   
+ip link set dev R01-eth0 up
+ip -6 addr add fde4:4:f000::2/127 dev R01-eth0
+   
+ip link set dev R01-eth1 up
+ip -6 addr add fde4:4:f000::4/127 dev R01-eth1
+   
+ip link set dev R01-eth2 up
+ip -6 addr add fde4:4:f000::6/127 dev R01-eth2
+   
+ip link set dev R01-eth3 up
+ip -6 addr add fde4:4:f000::8/127 dev R01-eth3
+   
+ip link set dev R01-eth4 up
+ip -6 addr add fde4:4:f000::27/127 dev R01-eth4
+
+
+
+# zebra is required to make the link between all FRRouting daemons
+# and the linux kernel routing table
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/zebra -A 127.0.0.1 -f /etc/R01_zebra.conf -z /tmp/R01.api -i /tmp/R01_zebra.pid --v6-rr-semantics &
+
+# launching FRRouting OSPF daemon
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/ospf6d -f /etc/R01_ospf.conf -z /tmp/R01.api -i /tmp/R01_ospf6d.pid -A 127.0.0.1 &
+
+#lauching FRRouting BGP daemon
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/bgpd -f /etc/R01_bgpd.conf -z /tmp/R01.api -i /tmp/R01_bgpd.pid -A 127.0.0.1 &
+
+# Launching nftables firewall
+LD_LIBRARY_PATH=/usr/local/lib nft -f /etc/R01_nftables.conf

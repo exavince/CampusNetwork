@@ -1,0 +1,28 @@
+#! /bin/bash
+
+# Startup script for router MP01
+
+ldconfig
+
+
+
+
+
+
+
+
+   
+ip link set dev MP01-eth0 up
+ip -6 addr add fde4:4:f000:22::1/128 dev MP01-eth0
+
+ip -6 r add fde4:4:f000:20:: dev MP01-eth0
+ip -6 r add ::/0 via fde4:4:f000:20::
+
+# zebra is required to make the link between all FRRouting daemons
+# and the linux kernel routing table
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/zebra -A 127.0.0.1 -f /etc/MP01_zebra.conf -z /tmp/MP01.api -i /tmp/MP01_zebra.pid --v6-rr-semantics &
+
+
+
+# Launching nftables firewall
+LD_LIBRARY_PATH=/usr/local/lib nft -f /etc/MP01_nftables.conf

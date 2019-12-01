@@ -1,0 +1,43 @@
+#! /bin/bash
+
+# Startup script for router R09
+
+ldconfig
+
+
+
+
+
+ip -6 addr add fde4:4:f000:1::9/128 dev lo
+
+   
+ip link set dev R09-eth0 up
+ip -6 addr add fde4:4:f000::22/127 dev R09-eth0
+   
+ip link set dev R09-eth1 up
+ip -6 addr add fde4:4:f000::24/127 dev R09-eth1
+   
+ip link set dev R09-eth2 up
+ip -6 addr add fde4:4:f000::26/127 dev R09-eth2
+   
+ip link set dev R09-eth3 up
+ip -6 addr add fde4:4:f000::35/127 dev R09-eth3
+
+
+
+# zebra is required to make the link between all FRRouting daemons
+# and the linux kernel routing table
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/zebra -A 127.0.0.1 -f /etc/R09_zebra.conf -z /tmp/R09.api -i /tmp/R09_zebra.pid --v6-rr-semantics &
+
+# launching FRRouting OSPF daemon
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/ospf6d -f /etc/R09_ospf.conf -z /tmp/R09.api -i /tmp/R09_ospf6d.pid -A 127.0.0.1 &
+
+
+#configuring the bgp interfaces
+ip link set dev bgp_as64512 up
+ip -6 addr add fde4::4:cafe/64 dev bgp_as64512 
+#lauching FRRouting BGP daemon
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/bgpd -f /etc/R09_bgpd.conf -z /tmp/R09.api -i /tmp/R09_bgpd.pid -A 127.0.0.1 &
+
+# Launching nftables firewall
+LD_LIBRARY_PATH=/usr/local/lib nft -f /etc/R09_nftables.conf

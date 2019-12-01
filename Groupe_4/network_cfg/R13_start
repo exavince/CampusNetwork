@@ -1,0 +1,40 @@
+#! /bin/bash
+
+# Startup script for router R13
+
+ldconfig
+
+
+
+
+
+ip -6 addr add fde4:4:f000:1::d/128 dev lo
+
+   
+ip link set dev R13-eth0 up
+ip -6 addr add fde4:4:f000::2d/127 dev R13-eth0
+   
+ip link set dev R13-eth1 up
+ip -6 addr add fde4:4:f000::2F/127 dev R13-eth1
+   
+ip link set dev R13-eth2 up
+ip -6 addr add fde4:4:f000::30/127 dev R13-eth2
+
+
+
+# zebra is required to make the link between all FRRouting daemons
+# and the linux kernel routing table
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/zebra -A 127.0.0.1 -f /etc/R13_zebra.conf -z /tmp/R13.api -i /tmp/R13_zebra.pid --v6-rr-semantics &
+
+# launching FRRouting OSPF daemon
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/ospf6d -f /etc/R13_ospf.conf -z /tmp/R13.api -i /tmp/R13_ospf6d.pid -A 127.0.0.1 &
+
+
+#configuring the bgp interfaces
+ip link set dev bgp_as65001 up
+ip -6 addr add fde4:1:600::4:bbbb/64 dev bgp_as65001 
+#lauching FRRouting BGP daemon
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/bgpd -f /etc/R13_bgpd.conf -z /tmp/R13.api -i /tmp/R13_bgpd.pid -A 127.0.0.1 &
+
+# Launching nftables firewall
+LD_LIBRARY_PATH=/usr/local/lib nft -f /etc/R13_nftables.conf

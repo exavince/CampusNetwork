@@ -1,0 +1,39 @@
+#! /bin/bash
+
+# Startup script for router R04
+
+ldconfig
+
+
+
+
+
+ip -6 addr add fde4:4:f000:1::4/128 dev lo
+
+   
+ip link set dev R04-eth0 up
+ip -6 addr add fde4:4:f000::b/127 dev R04-eth0
+   
+ip link set dev R04-eth1 up
+ip -6 addr add fde4:4:f000::15/127 dev R04-eth1
+   
+ip link set dev R04-eth2 up
+ip -6 addr add fde4:4:f000::16/127 dev R04-eth2
+   
+ip link set dev R04-eth3 up
+ip -6 addr add fde4:4:f000::18/127 dev R04-eth3
+
+
+
+# zebra is required to make the link between all FRRouting daemons
+# and the linux kernel routing table
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/zebra -A 127.0.0.1 -f /etc/R04_zebra.conf -z /tmp/R04.api -i /tmp/R04_zebra.pid --v6-rr-semantics &
+
+# launching FRRouting OSPF daemon
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/ospf6d -f /etc/R04_ospf.conf -z /tmp/R04.api -i /tmp/R04_ospf6d.pid -A 127.0.0.1 &
+
+#lauching FRRouting BGP daemon
+LD_LIBRARY_PATH=/usr/local/lib /usr/lib/frr/bgpd -f /etc/R04_bgpd.conf -z /tmp/R04.api -i /tmp/R04_bgpd.pid -A 127.0.0.1 &
+
+# Launching nftables firewall
+LD_LIBRARY_PATH=/usr/local/lib nft -f /etc/R04_nftables.conf
