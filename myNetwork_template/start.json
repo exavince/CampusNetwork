@@ -1,6 +1,7 @@
 [
   {
     "name" : "p1",
+    "ip" : "fde4:3::f1",
     "interfaces": [
       {
         "name": "P1-eth0",
@@ -26,6 +27,7 @@
   }, 
   {
     "name" : "p2",
+    "ip" : "fde4:3::f2",
     "interfaces": [
       {
         "name": "P2-eth0",
@@ -43,6 +45,7 @@
   }, 
   {
     "name" : "p3",
+    "ip" : "fde4:3::f3",
     "interfaces": [
       {
         "name": "P3-eth0",
@@ -64,6 +67,7 @@
   },
   {
     "name" : "p4",
+    "ip" : "fde4:3::f4",
     "interfaces": [
       {
         "name": "P4-eth0",
@@ -93,6 +97,7 @@
   },
   {
     "name" : "p5",
+    "ip" : "fde4:3::f5",
     "interfaces": [
       {
         "name": "P5-eth0",
@@ -114,6 +119,7 @@
   },
   {
     "name" : "p6",
+    "ip" : "fde4:3::f6",
     "interfaces": [
       {
         "name": "P6-eth0",
@@ -131,6 +137,7 @@
   },
   {
     "name" : "p7",
+    "ip" : "fde4:3::f7",
     "interfaces": [
       {
         "name": "P7-eth0",
@@ -156,6 +163,7 @@
   },
   {
     "name" : "p8",
+    "ip" : "fde4:3::f8",
     "interfaces": [
       {
         "name": "P8-eth0",
@@ -177,6 +185,7 @@
   },
   {
     "name" : "p9",
+    "ip" : "fde4:3::f9",
     "interfaces": [
       {
         "name": "P9-eth0",
@@ -194,6 +203,7 @@
   },
   {
     "name" : "p10",
+    "ip" : "fde4:3::fa",
     "interfaces": [
       {
         "name": "P10-eth0",
@@ -215,6 +225,7 @@
   },
   {
     "name" : "p11",
+    "ip" : "fde4:3::fb",
     "interfaces": [
       {
         "name": "P11-eth0",
@@ -236,6 +247,7 @@
   },
   {
     "name" : "p12",
+    "ip" : "fde4:3::fc",
     "interfaces": [
       {
         "name": "P12-eth0",
@@ -253,6 +265,7 @@
   },
   {
     "name" : "p13",
+    "ip" : "fde4:3::fd",
     "interfaces": [
       {
         "name": "P13-eth0",

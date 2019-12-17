@@ -22,3 +22,11 @@
 /home/vagrant/Group_folder/CampusNetwork/Groupe_4/network_cfg/common /common none rw,bind 0 0
 /home/vagrant/Group_folder/CampusNetwork/Groupe_4/network_cfg/puppetmodules /puppetmodules none rw,bind 0 0
 /run/R01 /run none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/Groupe_4/network_cfg/templates /templates none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/Groupe_4/network_cfg/common /common none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/Groupe_4/network_cfg/puppetmodules /puppetmodules none rw,bind 0 0
+/run/R01 /run none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/Groupe_4/network_cfg/templates /templates none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/Groupe_4/network_cfg/common /common none rw,bind 0 0
+/home/vagrant/Group_folder/CampusNetwork/Groupe_4/network_cfg/puppetmodules /puppetmodules none rw,bind 0 0
+/run/R01 /run none rw,bind 0 0

@@ -9,7 +9,9 @@ python make_router.py -i "zebra.json" -t "zebra.mako" -o " " -m
 python make_router.py -i "start.json" -t "start.mako" -o " " -m
 python make_router.py -i "cfg.json" -t "cfg.mako" -o "./myNetwork_cfg"
 
-for i in $(seq 1 13); do
+router_count=$(python3 router_counter.py)
+
+for i in $(seq 1 $router_count); do
     mkdir -p "myNetwork/P$i"
     mv p"$i"_zebra.conf "myNetwork/P$i"
     mv p"$i"_ospf.conf "myNetwork/P$i"
