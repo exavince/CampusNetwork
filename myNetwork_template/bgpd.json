@@ -11,10 +11,10 @@
         "command": "neighbor upstream capability dynamic"
       },
       {
-        "command": "neighbor fde4::1 remote-as 64512" 
+        "command": "neighbor fde4::1 remote-as 64512"
       },
       {
-        "command": "neighbor fde4::1 interface as64512" 
+        "command": "neighbor fde4::1 interface as64512"
       },
       {
         "command": "neighbor fde4:3::3:ffff remote-as 65007"
@@ -26,28 +26,28 @@
         "command": "neighbor fde4::1 peer-group upstream"
       },
       {
-        "command": "neighbor fde4:3::f2 remote-as 65003"
+        "command": "neighbor fde4:3:f100::2 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f2 update-source fde4:3::f1"
+        "command": "neighbor fde4:3:f100:2 update-source lo"
       },
       {
-        "command": "neighbor fde4:3::f4 remote-as 65003"
+        "command": "neighbor fde4:3:f200::4 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f4 update-source fde4:3::f1"
+        "command": "neighbor fde4:3:f200:4 update-source lo"
       },
       {
-        "command": "neighbor fde4:3::f8 remote-as 65003"
+        "command": "neighbor fde4:3:f300::8 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f8 update-source fde4:3::f1"
+        "command": "neighbor fde4:3:f300::8 update-source lo"
       },
       {
-        "command": "neighbor fde4:3::fa remote-as 65003"
+        "command": "neighbor fde4:3:f200::a remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::fa update-source fde4:3::f1"
+        "command": "neighbor fde4:3:f200::a update-source lo"
       }
     ],
     "addres-family": [
@@ -55,40 +55,40 @@
         "command": "network fde4:3::/32"
       },
       {
-        "command": "neighbor fde4::1 activate" 
+        "command": "neighbor fde4::1 activate"
       },
       {
         "command": "neighbor fde4:3::3:ffff activate"
       },
       {
-        "command": "neighbor fde4:3::f2 activate"
+        "command": "neighbor fde4:3:f100::2 activate"
       },
       {
-        "command": "neighbor fde4:3::f4 activate"
-      },
-      { 
-        "command": "neighbor fde4:3::f8 activate"
+        "command": "neighbor fde4:3:f200::4 activate"
       },
       {
-        "command": "neighbor fde4:3::fa activate"
+        "command": "neighbor fde4:3:f300::8 activate"
       },
       {
-        "command": "neighbor fde4:3::f2 next-hop-self"
+        "command": "neighbor fde4:3:f200::a activate"
       },
       {
-        "command": "neighbor fde4:3::f4 next-hop-self"
+        "command": "neighbor fde4:3:f100::2 next-hop-self"
       },
       {
-        "command": "neighbor fde4:3::f8 next-hop-self"
+        "command": "neighbor fde4:3:f200::4 next-hop-self"
       },
       {
-        "command": "neighbor fde4:3::fa next-hop-self"
+        "command": "neighbor fde4:3:f300::8 next-hop-self"
       },
       {
-        "command": "neighbor fde4:3::f2 route-reflector-client"
-      }, 
+        "command": "neighbor fde4:3:f200::a next-hop-self"
+      },
       {
-        "command": "neighbor fde4:3::fa route-reflector-client"
+        "command": "neighbor fde4:3:f100::2 route-reflector-client"
+      },
+      {
+        "command": "neighbor fde4:3:f200::a route-reflector-client"
       }
     ],
     "communities": [
@@ -109,48 +109,48 @@
         "command": "bgp cluster-id 110.0.0.2"
       },
       {
-        "command": "neighbor fde4:3::f1 remote-as 65003"
+        "command": "neighbor fde4:3:f100::1 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f1 update-source fde4:3::f2"
+        "command": "neighbor fde4:3:f100::1 update-source fde4:3:f100::2"
       },
       {
-        "command": "neighbor fde4:3::f3 remote-as 65003"
+        "command": "neighbor fde4:3:f200::3 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f3 update-source fde4:3::f2"
+        "command": "neighbor fde4:3:f200::3 update-source fde4:3:f100::2"
       },
       {
-        "command": "neighbor fde4:3::f4 remote-as 65003"
+        "command": "neighbor fde4:3:f200::4 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f4 update-source fde4:3::f2"
+        "command": "neighbor fde4:3:f200::4 update-source fde4:3:f100::2"
       },
       {
-        "command": "neighbor fde4:3::f9 remote-as 65003"
+        "command": "neighbor fde4:3:f100::9 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f9 update-source fde4:3::f2"
+        "command": "neighbor fde4:3:f100::9 update-source fde4:3:f100::2"
       }
     ],
     "addres-family": [
       {
-        "command": "neighbor fde4:3::f1 activate"
+        "command": "neighbor fde4:3:f100::1 activate"
       },
       {
-        "command": "neighbor fde4:3::f3 activate"
+        "command": "neighbor fde4:3:f200::3 activate"
       },
       {
-        "command": "neighbor fde4:3::f4 activate"
+        "command": "neighbor fde4:3:f200::4 activate"
       },
       {
-        "command": "neighbor fde4:3::f9 activate"
+        "command": "neighbor fde4:3:f100::9 activate"
       },
-      { 
-        "command": "neighbor fde4:3::f3 route-reflector-client" 
-      }, 
       {
-        "command": "neighbor fde4:3::f9 route-reflector-client"
+        "command": "neighbor fde4:3:f200::3 route-reflector-client"
+      },
+      {
+        "command": "neighbor fde4:3:f100::9 route-reflector-client"
       }
     ],
     "communities": [
@@ -158,31 +158,31 @@
         "rule": ""
       }
     ]
-  },  
+  },
   {
     "name" : "p3_bgpd",
     "ASN" : "65003",
     "router-id" : "10.1.1.3",
     "interfaces": [
       {
-        "command": "neighbor fde4:3::f2 remote-as 65003"
+        "command": "neighbor fde4:3:f100::2 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f2 update-source fde4:3::f3"
+        "command": "neighbor fde4:3:f100::2 update-source fde4:3:f200::3"
       },
       {
-        "command": "neighbor fde4:3::fa remote-as 65003"
+        "command": "neighbor fde4:3:f200::a remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::fa update-source fde4:3::f3"
+        "command": "neighbor fde4:3:f200::a update-source fde4:3:f200::3"
       }
     ],
     "addres-family": [
       {
-        "command": "neighbor fde4:3::f2 activate"
+        "command": "neighbor fde4:3:f100::2 activate"
       },
       {
-        "command": "neighbor fde4:3::fa activate"
+        "command": "neighbor fde4:3:f200::a activate"
       }
     ],
     "communities": [
@@ -224,40 +224,40 @@
         "command": "neighbor fde4::1 peer-group cust"
       },
       {
-        "command": "neighbor fde4:3::f1 remote-as 65003"
+        "command": "neighbor fde4:3:f100::1 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f1 update-source fde4:3::f4"
+        "command": "neighbor fde4:3:f100::1 update-source fde4:3:f200::4"
       },
       {
-        "command": "neighbor fde4:3::f2 remote-as 65003"
+        "command": "neighbor fde4:3:f100::2 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f2 update-source fde4:3::f4"
+        "command": "neighbor fde4:3:f100::2 update-source fde4:3:f200::4"
       },
       {
-        "command": "neighbor fde4:3::f6 remote-as 65003"
+        "command": "neighbor fde4:3:f300::6 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f6 update-source fde4:3::f4"
+        "command": "neighbor fde4:3:f300::6 update-source fde4:3:f200::4"
       },
       {
-        "command": "neighbor fde4:3::f8 remote-as 65003"
+        "command": "neighbor fde4:3:f300::8 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f8 update-source fde4:3::f4"
+        "command": "neighbor fde4:3:f300::8 update-source fde4:3:f200::4"
       },
       {
-        "command": "neighbor fde4:3::fa remote-as 65003"
+        "command": "neighbor fde4:3:f200::a remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::fa update-source fde4:3::f4"
+        "command": "neighbor fde4:3:f200::a update-source fde4:3:f200::4"
       },
       {
-        "command": "neighbor fde4:3::fb remote-as 65003"
+        "command": "neighbor fde4:3:f200::b remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::fb update-source fde4:3::f4"
+        "command": "neighbor fde4:3:f200::b update-source fde4:3:f200::4"
       }
     ],
     "addres-family": [
@@ -268,55 +268,55 @@
         "command": "neighbor fde4:3:2::2:face activate"
       },
       {
-        "command": "neighbor fde4:3::f1 activate"
+        "command": "neighbor fde4:3:f100::1 activate"
       },
       {
-        "command": "neighbor fde4:3::f2 activate"
+        "command": "neighbor fde4:3:f100::2 activate"
       },
       {
-        "command": "neighbor fde4:3::f6 activate"
+        "command": "neighbor fde4:3:f300::6 activate"
       },
       {
-        "command": "neighbor fde4:3::f8 activate"
+        "command": "neighbor fde4:3:f300::8 activate"
       },
       {
-        "command": "neighbor fde4:3::fa activate"
+        "command": "neighbor fde4:3:f200::a activate"
       },
       {
-        "command": "neighbor fde4:3::fb activate"
+        "command": "neighbor fde4:3:f200::b activate"
       },
       {
         "command": "neighbor fde4:4:f001:3::beef activate"
       },
       {
-        "command": "neighbor fde4:3::f1 next-hop-self"
+        "command": "neighbor fde4:3:f100::1 next-hop-self"
       },
       {
-        "command": "neighbor fde4:3::f2 next-hop-self"
+        "command": "neighbor fde4:3:f100::2 next-hop-self"
       },
       {
-        "command": "neighbor fde4:3::f6 next-hop-self"
+        "command": "neighbor fde4:3:f300::6 next-hop-self"
       },
       {
-        "command": "neighbor fde4:3::f8 next-hop-self"
+        "command": "neighbor fde4:3:f300::8 next-hop-self"
       },
       {
-        "command": "neighbor fde4:3::fa next-hop-self"
+        "command": "neighbor fde4:3:f200::a next-hop-self"
       },
       {
-        "command": "neighbor fde4:3::fb next-hop-self"
+        "command": "neighbor fde4:3:f200::b next-hop-self"
       },
       {
-        "command": "neighbor fde4:3::f2 route-reflector-client"
+        "command": "neighbor fde4:3:f100::2 route-reflector-client"
       },
       {
-        "command": "neighbor fde4:3::f6 route-reflector-client"
+        "command": "neighbor fde4:3:f300::6 route-reflector-client"
       },
       {
-        "command": "neighbor fde4:3::fa route-reflector-client"
+        "command": "neighbor fde4:3:f200::a route-reflector-client"
       },
       {
-        "command": "neighbor fde4:3::fb route-reflector-client"
+        "command": "neighbor fde4:3:f200::b route-reflector-client"
       }
     ],
     "communities": [
@@ -331,24 +331,24 @@
     "router-id" : "10.1.1.5",
     "interfaces": [
       {
-        "command": "neighbor fde4:3::f6 remote-as 65003"
+        "command": "neighbor fde4:3:f300::6 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f6 update-source fde4:3::f5"
+        "command": "neighbor fde4:3:f300::6 update-source fde4:3:f200::5"
       },
       {
-        "command": "neighbor fde4:3::fb remote-as 65003"
+        "command": "neighbor fde4:3:f200::b remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::fb update-source fde4:3::f5"
+        "command": "neighbor fde4:3:f200::b update-source fde4:3:f200::5"
       }
     ],
     "addres-family": [
       {
-        "command": "neighbor fde4:3::f6 activate"
+        "command": "neighbor fde4:3:f300::6 activate"
       },
       {
-        "command": "neighbor fde4:3::fb activate"
+        "command": "neighbor fde4:3:f200::b activate"
       }
     ],
     "communities": [
@@ -366,72 +366,72 @@
         "command": "bgp cluster-id 110.0.0.2"
       },
       {
-        "command": "neighbor fde4:3::f4 remote-as 65003"
+        "command": "neighbor fde4:3:f200::4 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f4 update-source fde4:3::f6"
+        "command": "neighbor fde4:3:f200::4 update-source fde4:3:f300::6"
       },
       {
-        "command": "neighbor fde4:3::f5 remote-as 65003"
+        "command": "neighbor fde4:3:f200::5 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f5 update-source fde4:3::f6"
+        "command": "neighbor fde4:3:f200::5 update-source fde4:3:f300::6"
       },
       {
-        "command": "neighbor fde4:3::f7 remote-as 65003"
+        "command": "neighbor fde4:3:f200::7 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f7 update-source fde4:3::f6"
+        "command": "neighbor fde4:3:f200::7 update-source fde4:3:f300::6"
       },
       {
-        "command": "neighbor fde4:3::f8 remote-as 65003"
+        "command": "neighbor fde4:3:f300::8 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f8 update-source fde4:3::f6"
+        "command": "neighbor fde4:3:f300::8 update-source fde4:3:f300::6"
       },
       {
-        "command": "neighbor fde4:3::fc remote-as 65003"
+        "command": "neighbor fde4:3:f300::c remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::fc update-source fde4:3::f6"
+        "command": "neighbor fde4:3:f300::c update-source fde4:3:f300::6"
       },
       {
-        "command": "neighbor fde4:3::fd remote-as 65003"
+        "command": "neighbor fde4:3:f200::d remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::fd update-source fde4:3::f6"
+        "command": "neighbor fde4:3:f200::d update-source fde4:3:f300::6"
       }
     ],
     "addres-family": [
       {
-        "command": "neighbor fde4:3::f4 activate"
-      },
-      { 
-        "command": "neighbor fde4:3::f5 activate"
+        "command": "neighbor fde4:3:f200::4 activate"
       },
       {
-        "command": "neighbor fde4:3::f7 activate"
+        "command": "neighbor fde4:3:f200::5 activate"
       },
       {
-        "command": "neighbor fde4:3::f8 activate" 
+        "command": "neighbor fde4:3:f200::7 activate"
       },
       {
-        "command": "neighbor fde4:3::fc activate" 
+        "command": "neighbor fde4:3:f300::8 activate"
       },
       {
-        "command": "neighbor fde4:3::fd activate"
+        "command": "neighbor fde4:3:f300::c activate"
       },
       {
-        "command": "neighbor fde4:3::f5 route-reflector-client"
+        "command": "neighbor fde4:3:f200::d activate"
       },
       {
-        "command": "neighbor fde4:3::f7 route-reflector-client"
+        "command": "neighbor fde4:3:f200::5 route-reflector-client"
       },
       {
-        "command": "neighbor fde4:3::fc route-reflector-client"
+        "command": "neighbor fde4:3:f200::7 route-reflector-client"
       },
       {
-        "command": "neighbor fde4:3::fd route-reflector-client"
+        "command": "neighbor fde4:3:f300::c route-reflector-client"
+      },
+      {
+        "command": "neighbor fde4:3:f200::d route-reflector-client"
       }
     ],
     "communities": [
@@ -446,24 +446,24 @@
     "router-id" : "10.1.1.7",
     "interfaces": [
       {
-        "command": "neighbor fde4:3::f6 remote-as 65003"
+        "command": "neighbor fde4:3:f300::6 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f6 update-source fde4:3::f7"
+        "command": "neighbor fde4:3:f300::6 update-source fde4:3:f200::7"
       },
       {
-        "command": "neighbor fde4:3::fb remote-as 65003"
+        "command": "neighbor fde4:3:f200::b remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::fb update-source fde4:3::f7"
+        "command": "neighbor fde4:3:f200::b update-source fde4:3:f200::7"
       }
     ],
     "addres-family": [
       {
-        "command": "neighbor fde4:3::f6 activate"
+        "command": "neighbor fde4:3:f300::6 activate"
       },
       {
-        "command": "neighbor fde4:3::fb activate"
+        "command": "neighbor fde4:3:f200::b activate"
       }
     ],
     "communities": [
@@ -490,28 +490,28 @@
         "command": "neighbor fde4:3::1:f00d password 2142AS6500165003"
       },
       {
-        "command": "neighbor fde4:3::f1 remote-as 65003"
+        "command": "neighbor fde4:3:f100::1 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f1 update-source fde4:3::f8"
+        "command": "neighbor fde4:3:f100::1 update-source fde4:3:f300::8"
       },
       {
-        "command": "neighbor fde4:3::f4 remote-as 65003"
+        "command": "neighbor fde4:3:f200::4 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f4 update-source fde4:3::f8"
+        "command": "neighbor fde4:3:f200::4 update-source fde4:3:f300::8"
       },
       {
-        "command": "neighbor fde4:3::f6 remote-as 65003"
+        "command": "neighbor fde4:3:f300::6 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f6 update-source fde4:3::f8"
+        "command": "neighbor fde4:3:f300::6 update-source fde4:3:f300::8"
       },
       {
-        "command": "neighbor fde4:3::fb remote-as 65003"
+        "command": "neighbor fde4:3:f200::b remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::fb update-source fde4:3::f8"
+        "command": "neighbor fde4:3:f200::b update-source fde4:3:f300::8"
       }
     ],
     "addres-family": [
@@ -519,37 +519,37 @@
         "command": "neighbor fde4:3::1:f00d activate"
       },
       {
-        "command": "neighbor fde4:3::f1 activate"
+        "command": "neighbor fde4:3:f100::1 activate"
       },
       {
-        "command": "neighbor fde4:3::f4 activate"
+        "command": "neighbor fde4:3:f200::4 activate"
       },
       {
-        "command": "neighbor fde4:3::f6 activate"
+        "command": "neighbor fde4:3:f300::6 activate"
       },
       {
-        "command": "neighbor fde4:3::fb activate"
+        "command": "neighbor fde4:3:f200::b activate"
       },
       {
         "command": "network fde4:3::/32"
       },
       {
-        "command": "neighbor fde4:3::f1 next-hop-self"
+        "command": "neighbor fde4:3:f100::1 next-hop-self"
       },
       {
-        "command": "neighbor fde4:3::f4 next-hop-self"
+        "command": "neighbor fde4:3:f200::4 next-hop-self"
       },
       {
-        "command": "neighbor fde4:3::f6 next-hop-self"
+        "command": "neighbor fde4:3:f300::6 next-hop-self"
       },
       {
-        "command": "neighbor fde4:3::fb next-hop-self"
+        "command": "neighbor fde4:3:f200::b next-hop-self"
       },
       {
-        "command": "neighbor fde4:3::f6 route-reflector-client"
+        "command": "neighbor fde4:3:f300::6 route-reflector-client"
       },
       {
-        "command": "neighbor fde4:3::fb route-reflector-client"
+        "command": "neighbor fde4:3:f200::b route-reflector-client"
       }
     ],
     "communities": [
@@ -564,24 +564,24 @@
     "router-id" : "1.1.1.9",
     "interfaces": [
       {
-        "command": "neighbor fde4:3::f2 remote-as 65003"
+        "command": "neighbor fde4:3:f100::2 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f2 update-source fde4:3::f9"
+        "command": "neighbor fde4:3:f100::2 update-source fde4:3:f100::9"
       },
       {
-        "command": "neighbor fde4:3::fa remote-as 65003"
+        "command": "neighbor fde4:3:f200::a remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::fa update-source fde4:3::f9"
+        "command": "neighbor fde4:3:f200::a update-source fde4:3:f100::9"
       }
     ],
     "addres-family": [
       {
-        "command": "neighbor fde4:3::f2 activate"
+        "command": "neighbor fde4:3:f100::2 activate"
       },
       {
-        "command": "neighbor fde4:3::fa activate"
+        "command": "neighbor fde4:3:f200::a activate"
       }
     ],
     "communities": [
@@ -599,48 +599,48 @@
         "command": "bgp cluster-id 110.0.0.2"
       },
       {
-        "command": "neighbor fde4:3::f1 remote-as 65003"
+        "command": "neighbor fde4:3:f100::1 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f1 update-source fde4:3::fa"
+        "command": "neighbor fde4:3:f100::1 update-source fde4:3:f200::a"
       },
       {
-        "command": "neighbor fde4:3::f3 remote-as 65003"
+        "command": "neighbor fde4:3:f200::3 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f3 update-source fde4:3::fa"
+        "command": "neighbor fde4:3:f200::3 update-source fde4:3:f200::a"
       },
       {
-        "command": "neighbor fde4:3::f4 remote-as 65003"
+        "command": "neighbor fde4:3:f200::4 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f4 update-source fde4:3::fa"
+        "command": "neighbor fde4:3:f200::4 update-source fde4:3:f200::a"
       },
       {
-        "command": "neighbor fde4:3::f9 remote-as 65003"
+        "command": "neighbor fde4:3:f100::9 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f9 update-source fde4:3::fa"
+        "command": "neighbor fde4:3:f100::9 update-source fde4:3:f200::a"
       }
     ],
     "addres-family": [
       {
-        "command": "neighbor fde4:3::f1 activate"
+        "command": "neighbor fde4:3:f100::1 activate"
       },
       {
-        "command": "neighbor fde4:3::f3 activate"
+        "command": "neighbor fde4:3:f200::3 activate"
       },
       {
-        "command": "neighbor fde4:3::f4 activate"
+        "command": "neighbor fde4:3:f200::4 activate"
       },
       {
-        "command": "neighbor fde4:3::f9 activate"
+        "command": "neighbor fde4:3:f100::9 activate"
       },
       {
-        "command": "neighbor fde4:3::f3 route-reflector-client"
+        "command": "neighbor fde4:3:f200::3 route-reflector-client"
       },
       {
-        "command": "neighbor fde4:3::f9 route-reflector-client"
+        "command": "neighbor fde4:3:f100::9 route-reflector-client"
       }
     ],
     "communities": [
@@ -658,40 +658,40 @@
         "command": "bgp cluster-id 110.0.0.2"
       },
       {
-        "command": "neighbor fde4:3::f4 remote-as 65003"
+        "command": "neighbor fde4:3:f200::4 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f4 update-source fde4:3::fb"
+        "command": "neighbor fde4:3:f200::4 update-source fde4:3:f200::b"
       },
       {
-        "command": "neighbor fde4:3::f5 remote-as 65003"
+        "command": "neighbor fde4:3:f200::5 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f5 update-source fde4:3::fb"
+        "command": "neighbor fde4:3:f200::5 update-source fde4:3:f200::b"
       },
       {
-        "command": "neighbor fde4:3::f7 remote-as 65003"
+        "command": "neighbor fde4:3:f200::7 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f7 update-source fde4:3::fb"
+        "command": "neighbor fde4:3:f200::7 update-source fde4:3:f200::b"
       },
       {
-        "command": "neighbor fde4:3::f8 remote-as 65003"
+        "command": "neighbor fde4:3:f300::8 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f8 update-source fde4:3::fb"
+        "command": "neighbor fde4:3:f300::8 update-source fde4:3:f200::b"
       },
       {
-        "command": "neighbor fde4:3::fc remote-as 65003"
+        "command": "neighbor fde4:3:f300::c remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::fc update-source fde4:3::fb"
+        "command": "neighbor fde4:3:f300::c update-source fde4:3:f200::b"
       },
       {
-        "command": "neighbor fde4:3::fd remote-as 65003"
+        "command": "neighbor fde4:3:f200::d remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::fd update-source fde4:3::fb"
+        "command": "neighbor fde4:3:f200::d update-source fde4:3:f200::b"
       },
       {
         "command": ""
@@ -699,34 +699,34 @@
     ],
     "addres-family": [
       {
-        "command": "neighbor fde4:3::f4 activate"
+        "command": "neighbor fde4:3:f200::4 activate"
       },
       {
-        "command": "neighbor fde4:3::f5 activate"
+        "command": "neighbor fde4:3:f200::5 activate"
       },
       {
-        "command": "neighbor fde4:3::f7 activate"
+        "command": "neighbor fde4:3:f200::7 activate"
       },
       {
-        "command": "neighbor fde4:3::f8 activate"
+        "command": "neighbor fde4:3:f300::8 activate"
       },
       {
-        "command": "neighbor fde4:3::fc activate"
+        "command": "neighbor fde4:3:f300::c activate"
       },
       {
-        "command": "neighbor fde4:3::fd activate"
+        "command": "neighbor fde4:3:f200::d activate"
       },
       {
-        "command": "neighbor fde4:3::f5 route-reflector-client"
+        "command": "neighbor fde4:3:f200::5 route-reflector-client"
       },
       {
-        "command": "neighbor fde4:3::f7 route-reflector-client"
+        "command": "neighbor fde4:3:f200::7 route-reflector-client"
       },
       {
-        "command": "neighbor fde4:3::fc route-reflector-client"
+        "command": "neighbor fde4:3:f300::c route-reflector-client"
       },
       {
-        "command": "neighbor fde4:3::fd route-reflector-client"
+        "command": "neighbor fde4:3:f200::d route-reflector-client"
       }
     ],
     "communities": [
@@ -741,24 +741,24 @@
     "router-id" : "1.1.1.12",
     "interfaces": [
       {
-        "command": "neighbor fde4:3::f6 remote-as 65003"
+        "command": "neighbor fde4:3:f300::6 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f6 update-source fde4:3::fc"
+        "command": "neighbor fde4:3:f300::6 update-source fde4:3:f300::c"
       },
       {
-        "command": "neighbor fde4:3::fb remote-as 65003"
+        "command": "neighbor fde4:3:f200::b remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::fb update-source fde4:3::fc"
+        "command": "neighbor fde4:3:f200::b update-source fde4:3:f300::c"
       }
     ],
     "addres-family": [
       {
-        "command": "neighbor fde4:3::f6 activate"
+        "command": "neighbor fde4:3:f300::6 activate"
       },
       {
-        "command": "neighbor fde4:3::fb activate"
+        "command": "neighbor fde4:3:f200::b activate"
       }
     ],
     "communities": [
@@ -773,24 +773,24 @@
     "router-id" : "1.1.1.13",
     "interfaces": [
       {
-        "command": "neighbor fde4:3::f6 remote-as 65003"
+        "command": "neighbor fde4:3:f300::6 remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::f6 update-source fde4:3::fd"
+        "command": "neighbor fde4:3:f300::6 update-source fde4:3:f200::d"
       },
       {
-        "command": "neighbor fde4:3::fb remote-as 65003"
+        "command": "neighbor fde4:3:f200::b remote-as 65003"
       },
       {
-        "command": "neighbor fde4:3::fb update-source fde4:3::fd"
+        "command": "neighbor fde4:3:f200::b update-source fde4:3:f200::d"
       }
     ],
     "addres-family": [
       {
-        "command": "neighbor fde4:3::f6 activate"
+        "command": "neighbor fde4:3:f300::6 activate"
       },
       {
-        "command": "neighbor fde4:3::fb activate"
+        "command": "neighbor fde4:3:f200::b activate"
       }
     ],
     "communities": [
@@ -799,4 +799,4 @@
       }
     ]
   }
-] 
+]
