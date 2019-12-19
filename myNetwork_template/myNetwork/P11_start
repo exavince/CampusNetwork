@@ -4,13 +4,13 @@ ldconfig
 
 # Setting up interfaces
 ip link set dev P11-eth0 up
-ip -6 addr add fde4:3:b::b/64 dev P11-eth0
+ip -6 addr add fde4:3:f200:6::b/64 dev P11-eth0
 ip link set dev P11-eth1 up
-ip -6 addr add fde4:3:a::b/64 dev P11-eth1
+ip -6 addr add fde4:3:f300:4::b/64 dev P11-eth1
 ip link set dev P11-eth2 up
-ip -6 addr add fde4:3:c::b/64 dev P11-eth2
+ip -6 addr add fde4:3:f200:8::b/64 dev P11-eth2
 ip link set dev lo up
-ip -6 addr add fde4:3::fb/128 dev lo
+ip -6 addr add fde4:3:f200::b/128 dev lo
 
 
 # zebra is required to make the link between all FRRouting daemons

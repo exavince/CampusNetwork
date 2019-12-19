@@ -65,7 +65,7 @@ if __name__ == '__main__':
 
     net_rep = "myNetwork"
     print(router_list)
-    name_to_test = input("Name of the router to test: ")
+    name_to_test = input("Name of the router to kill: ")
     try:
         number_to_test = router_list.index(name_to_test)
         test_router = router_list[number_to_test]
@@ -78,29 +78,27 @@ if __name__ == '__main__':
             interface_name.append(interfaces_single["name"])
             link_to.append(interfaces_single["link_to"])
 
-        print(interface_name)
-        name_inter_to_down = input("Name of the interface to down: ")
-        try:
-            nbr_inter_to_down = interface_name.index(name_inter_to_down)
-            inter_to_down = interface_name[nbr_inter_to_down]
-            link_to_down = link_to[nbr_inter_to_down]
 
-            child.sendline('sudo ./connect_to.sh ' + net_rep + ' ' + test_router)
-            child.expect('\r\n')
-            idx = child.expect([r'bash-4\.3\#','Network is unreachable'])
-            if idx == 1:
-                print("Network is unreachable")
-                child.sendline('exit')
-            else:
-
+        child.sendline('sudo ./connect_to.sh ' + net_rep + ' ' + test_router)
+        child.expect('\r\n')
+        idx = child.expect([r'bash-4\.3\#','Network is unreachable'])
+        if idx == 1:
+            print("Network is unreachable")
+            child.sendline('exit')
+        else:
+            for m in range(len(interfaces)):
+                inter_to_down = interface_name[m]
                 child.sendline('ip link set ' + inter_to_down + ' down')
                 child.expect('\r\n')
                 child.expect(prompt)
 
-                #ip_list = ['fde4:3::f1','fde4:3::f2','fde4:3::f3','fde4:3::f4','fde4:3::f5','fde4:3::f6','fde4:3::f7','fde4:3::f8','fde4:3::f9','fde4:3::fa','fde4:3::fb','fde4:3::fc','fde4:3::fd']
-                #number_ip = len(ip_list)
-                all_ping_all.main(number_to_test)
+            #ip_list = ['fde4:3::f1','fde4:3::f2','fde4:3::f3','fde4:3::f4','fde4:3::f5','fde4:3::f6','fde4:3::f7','fde4:3::f8','fde4:3::f9','fde4:3::fa','fde4:3::fb','fde4:3::fc','fde4:3::fd']
+            #number_ip = len(ip_list)
+            all_ping_all.main(number_to_test)
 
+            for m in range(len(interfaces)):
+                inter_to_down = interface_name[m]
+                link_to_down = link_to[m]
                 child.sendline('ip link set ' + inter_to_down + ' up')
                 child.expect('\r\n')
                 child.expect(prompt)
@@ -108,10 +106,7 @@ if __name__ == '__main__':
                 child.expect('\r\n')
                 child.expect(prompt)
 
-                print("End of the broken link test")
-                child.sendline('exit')
-        except ValueError:
-            print("Not in list!")
+            print("End of the broken router test")
             child.sendline('exit')
     except ValueError:
         print("Not in list!")

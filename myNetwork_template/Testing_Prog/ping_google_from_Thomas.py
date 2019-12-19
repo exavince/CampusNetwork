@@ -57,22 +57,20 @@ if __name__ == '__main__':
     test_router = input("Name of the router to test: ")
     child.sendline('sudo ./connect_to.sh ' + net_rep + ' ' + test_router)
     child.expect('\r\n')
-    idx = child.expect('')
-    child.expect(prompt)
-    if idx == 0:
-        print("Connected to router " + net_rep + ' ' + test_router)
-    else:
-        print("FAILED")
+    idx = child.expect([r'bash-4\.3\#','Network is unreachable'])
+    if idx == 1:
+        print("Network is unreachable")
         child.sendline('exit')
-
-    child.sendline('ping6 -c 5 -i 1 2001:4860:4860::8888')
-    child.expect('\r\n')
-    idx = child.expect(['100% packet loss'])
-    child.expect(prompt)
-
-    if idx == 0:
-        print("Unable to ping Google")
     else:
-        print("Able to ping Google")
-    child.sendline('exit')
+
+        child.sendline('ping6 -c 5 -i 1 2001:4860:4860::8888')
+        child.expect('\r\n')
+        idx = child.expect(['100% packet loss'])
+        child.expect(prompt)
+
+        if idx == 0:
+            print("Unable to ping Google")
+        else:
+            print("Able to ping Google")
+        child.sendline('exit')
 
